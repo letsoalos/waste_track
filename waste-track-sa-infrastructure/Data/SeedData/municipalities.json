@@ -1,0 +1,98 @@
+[
+    {
+        "Id": 1,
+        "Name": "Emfuleni Local Municipality",
+        "Address": "Cnr Klasie Havenga & Frikkie Meyer Blvd, Vanderbijlpark",
+        "Code": "GT421",
+        "Contacts": "0169505000",
+        "DistrictId": 8
+    },
+    {
+        "Id": 2,
+        "Name": "Lesedi Local Municipality",
+        "Address": "Cnr HF Verwoerd & Louw Streets, Heidelberg",
+        "Code": "GT423",
+        "Contacts": "0164920049",
+        "DistrictId": 8
+    },
+    {
+        "Id": 3,
+        "Name": "Midvaal Local Municipality",
+        "Address": "25 Mitchell Street, Cnr Junius & Mitchell Streets, Meyerton",
+        "Code": "GT422",
+        "Contacts": "0163607400",
+        "DistrictId": 8
+    },
+    {
+        "Id": 4,
+        "Name": "Merafong City Local Municipality",
+        "Address": "3 Halite Street, Carletonville",
+        "Code": "GT484",
+        "Contacts": "0187889500",
+        "DistrictId": 9
+    },
+    {
+        "Id": 5,
+        "Name": "Mogale City Local Municipality",
+        "Address": "Cnr Commissioner & Market Streets, Krugersdorp",
+        "Code": "GT481",
+        "Contacts": "0119512000/1",
+        "DistrictId": 9
+    },
+    {
+        "Id": 6,
+        "Name": "Rand West City Local Municipality",
+        "Address": "Cnr Surtherland & Pollock Streets, Randfontein",
+        "Code": "GT485",
+        "Contacts": "0114110000",
+        "DistrictId": 9
+    },
+    {
+        "Id": 7,
+        "Name": "Breede Valley Local Municipality",
+        "Address": "30 Baring Street, Worcester",
+        "Code": "WC025",
+        "Contacts": "0233482600",
+        "DistrictId": 11
+    },
+    {
+        "Id": 8,
+        "Name": "Drakenstein Local Municipality",
+        "Address": "Berg River Boulevard, Paarl",
+        "Code": "WC023",
+        "Contacts": "0218074500",
+        "DistrictId": 11
+    },
+    {
+        "Id": 9,
+        "Name": "Langeberg Local Municipality",
+        "Address": "28 Main Street, Ashton",
+        "Code": "WC026",
+        "Contacts": "0236158000",
+        "DistrictId": 11
+    },
+    {
+        "Id": 10,
+        "Name": "Stellenbosch Local Municipality",
+        "Address": "Plein Street, Stellenbosch",
+        "Code": "WC024",
+        "Contacts": "0218088111",
+        "DistrictId": 11
+    },
+    {
+        "Id": 11,
+        "Name": "Witzenberg Local Municipality",
+        "Address": "50 Voortrekker Street, Ceres",
+        "Code": "WC022",
+        "Contacts": "0233161854",
+        "DistrictId": 11
+    },
+    {
+        "Id": 12,
+        "Name": "Beaufort West Local Municipality",
+        "Address": "112 Donkin Street, Beaufort West",
+        "Code": "WC053",
+        "Contacts": "0234148149",
+        "DistrictId": 12
+    }
+]

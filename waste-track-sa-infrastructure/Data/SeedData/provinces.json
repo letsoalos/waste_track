@@ -1,0 +1,38 @@
+[
+    {
+        "Id": 1,
+        "Name": "Gauteng"
+    },
+    {
+        "Id": 2,
+        "Name": "Free State"
+    },
+    {
+        "Id": 3,
+        "Name": "Kwazulu Natal"
+    },
+    {
+        "Id": 4,
+        "Name": "Limpopo"
+    },
+    {
+        "Id": 5,
+        "Name": "Eastern Cape"
+    },
+    {
+        "Id": 6,
+        "Name": "Northern Cape"
+    },
+    {
+        "Id": 7,
+        "Name": "North West"
+    },
+    {
+        "Id": 8,
+        "Name": "Mpumalanga"
+    },
+    {
+        "Id": 9,
+        "Name": "Western Cape"
+    }
+]

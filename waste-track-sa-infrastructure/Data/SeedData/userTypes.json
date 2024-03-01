@@ -1,0 +1,22 @@
+[
+    {
+        "Id": 1,
+        "Name": "Admin"
+    },
+    {
+        "Id": 2,
+        "Name": "Registrar"
+    },
+    {
+        "Id": 3,
+        "Name": "Verifier"
+    },
+    {
+        "Id": 4,
+        "Name": "Card Issuer"
+    },
+    {
+        "Id": 5,
+        "Name": "Superuser"
+    }
+]

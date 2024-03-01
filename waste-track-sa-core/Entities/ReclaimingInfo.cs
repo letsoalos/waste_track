@@ -3,7 +3,7 @@ namespace waste_track_sa_core.Entities
     public class ReclaimingInfo : BaseEntity
     {
         public int WastePickerId { get; set; }
-        public DateTime Year { get; set; }
+        public string? Year { get; set; }
         public int WorksiteId { get; set; }
         public int MunicipalityId { get; set; }
         public int IncomeMethodId { get; set; }

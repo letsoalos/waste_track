@@ -1,0 +1,38 @@
+[
+    {
+        "Id": 1,
+        "Name": "Home"
+    },
+    {
+        "Id": 2,
+        "Name": "Parks or Open spaces"
+    },
+    {
+        "Id": 3,
+        "Name": "Kerbside"
+    },
+    {
+        "Id": 4,
+        "Name": "Buy back centres"
+    },
+    {
+        "Id": 5,
+        "Name": "Not Applicable"
+    },
+    {
+        "Id": 6,
+        "Name": "Other"
+    },
+    {
+        "Id": 7,
+        "Name": "Materials recovery facility"
+    },
+    {
+        "Id": 8,
+        "Name": "Recycling centre"
+    },
+    {
+        "Id": 9,
+        "Name": "Recycling centre"
+    }
+]

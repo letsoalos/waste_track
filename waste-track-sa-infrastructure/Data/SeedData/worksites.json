@@ -1,0 +1,19 @@
+[
+    {
+        "Id": 1,
+        "Name": "Landfills"
+    },
+    {
+        "Id": 2,
+        "Name": "Streets and public places"
+    },
+    {
+        "Id": 3,
+        "Name": "Sorting Centre"
+    },
+    {
+        "Id": 4,
+        "Name": "Other"
+    }
+
+]

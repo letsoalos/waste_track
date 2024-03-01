@@ -30,8 +30,8 @@ namespace waste_track_sa_core.Entities
         public int? ActivityStatusId { get; set; }                      //cant locate related table
         public DateTime? LastActivityDate { get; set; }
         public int? PrintCount { get; set; }                            //cant locate related table
-        public int? UpdatedPrintCount { get; set; }                     //cant locate related table
-        public int? NewPrint { get; set; }                              //cant locate related table                     
+        public int? ManualPrintCount { get; set; }                     //cant locate related table
+        public int? AutoPrintCount { get; set; }                       //cant locate related table                     
 
 
         public DocumentType? DocumentType { get; set; }   
