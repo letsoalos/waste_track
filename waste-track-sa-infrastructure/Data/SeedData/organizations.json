@@ -1,7 +1,7 @@
 [
     {
         "Id": 1,
-        "OrganizationTypeId": "NULL",
+        "OrganizationTypeId": 1,
         "MunicipalityId": 1,
         "Name": "Tswane Muni",
         "Address": "Tshwane Address",
@@ -10,7 +10,7 @@
     },
     {
         "Id": 2,
-        "OrganizationTypeId": "NULL",
+        "OrganizationTypeId": 2,
         "MunicipalityId": 1,
         "Name": "Tswane Muni",
         "Address": "Tshwane Address",
@@ -19,7 +19,7 @@
     },
     {
         "Id": 3,
-        "OrganizationTypeId": "NULL",
+        "OrganizationTypeId": 2,
         "MunicipalityId": 1,
         "Name": "Organisation A",
         "Address": "13 street x, 0182",
@@ -28,7 +28,7 @@
     },
     {
         "Id": 4,
-        "OrganizationTypeId": "NULL",
+        "OrganizationTypeId": 2,
         "MunicipalityId": 2,
         "Name": "Organisation B",
         "Address": "14 street x",
@@ -37,7 +37,7 @@
     },
     {
         "Id": 5,
-        "OrganizationTypeId": "NULL",
+        "OrganizationTypeId": 1,
         "MunicipalityId": 1,
         "Name": "Organisation C",
         "Address": "15 street x",
@@ -46,7 +46,7 @@
     },
     {
         "Id": 6,
-        "OrganizationTypeId": "NULL",
+        "OrganizationTypeId": 2,
         "MunicipalityId": 5,
         "Name": "Organisation Waste Picker",
         "Address": "167 street xy",

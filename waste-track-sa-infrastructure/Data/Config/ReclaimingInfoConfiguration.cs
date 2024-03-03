@@ -8,7 +8,7 @@ namespace waste_track_sa_infrastructure.Data.Config
     {
         public void Configure(EntityTypeBuilder<ReclaimingInfo> builder)
         {
-            builder.Property(r => r.Address).IsRequired().HasMaxLength(250);
+            builder.Property(r => r.Address).HasMaxLength(250);
             builder.HasOne(w => w.WastePicker).WithMany().HasForeignKey(r => r.WastePickerId);
             builder.HasOne(w => w.Worksite).WithMany().HasForeignKey(r => r.WorksiteId);
             builder.HasOne(w => w.Municipality).WithMany().HasForeignKey(r => r.MunicipalityId);

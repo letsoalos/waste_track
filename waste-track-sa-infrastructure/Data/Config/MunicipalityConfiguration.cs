@@ -12,7 +12,7 @@ namespace waste_track_sa_infrastructure.Data.Config
             builder.Property(m => m.Address).IsRequired().HasMaxLength(250);
             builder.Property(m => m.Code).IsRequired().HasMaxLength(10);
             builder.Property(m => m.Contacts).IsRequired().HasMaxLength(15);
-            builder.HasOne(d => d.District).WithMany().HasForeignKey(m => m.DistrictId);
+            builder.HasOne(d => d.District).WithMany().HasForeignKey(m => m.DistrictId).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

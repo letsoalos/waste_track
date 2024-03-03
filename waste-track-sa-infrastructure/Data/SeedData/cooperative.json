@@ -1,0 +1,57 @@
+[
+    {
+        "Id": 1,
+        "Name": "Bokamoso",
+        "YearEstablish": "2015",
+        "IsRegistered": true,
+        "IsActive": true,
+        "CreatedBy": "naziclayton@gmail.com",
+        "CreatedDate": "2022-02-15T09:29:16.823Z",
+        "LastUpdatedBy": "naziclayton@gmail.com",
+        "LastUpdatedDate": "2022-02-15T09:29:16.823Z"
+    },
+    {
+        "Id": 2,
+        "Name": "Green up",
+        "YearEstablish": "2020",
+        "IsRegistered": true,
+        "IsActive": true,
+        "CreatedBy": "naziclayton@gmail.com",
+        "CreatedDate": "2022-03-16T09:29:16.823Z",
+        "LastUpdatedBy": "naziclayton@gmail.com",
+        "LastUpdatedDate": "2022-02-15T09:29:16.823Z"
+    },
+    {
+        "Id": 3,
+        "Name": "Makhaza community recycling",
+        "YearEstablish": "2021",
+        "IsRegistered": true,
+        "IsActive": true,
+        "CreatedBy": "vilakazipaula83@gmail.com",
+        "CreatedDate": "2022-02-15T09:29:16.823Z",
+        "LastUpdatedBy": "naziclayton@gmail.com",
+        "LastUpdatedDate": "2022-02-15T09:29:16.823Z"
+    },
+    {
+        "Id": 4,
+        "Name": "ABMP cooperative",
+        "YearEstablish": "2005",
+        "IsRegistered": true,
+        "IsActive": true,
+        "CreatedBy": "naziclayton@gmail.com",
+        "CreatedDate": "2022-02-15T09:29:16.823Z",
+        "LastUpdatedBy": "naziclayton@gmail.com",
+        "LastUpdatedDate": "2022-02-15T09:29:16.823Z"
+    },
+    {
+        "Id": 5,
+        "Name": "Vaal park recycling center ",
+        "YearEstablish": "2017",
+        "IsRegistered": true,
+        "IsActive": true,
+        "CreatedBy": "naziclayton@gmail.com",
+        "CreatedDate": "2022-11-15T09:29:16.823Z",
+        "LastUpdatedBy": "naziclayton@gmail.com",
+        "LastUpdatedDate": "2022-02-15T09:29:16.823Z"
+    }
+]
