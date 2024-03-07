@@ -8,6 +8,7 @@ namespace waste_track_sa_infrastructure.Data.Config
     {
         public void Configure(EntityTypeBuilder<Race> builder)
         {
+            //builder.Property(r => r.Id).ValueGeneratedOnAdd().UseIdentityColumn();
             builder.Property(r => r.Name).IsRequired().HasMaxLength(10);
         }
     }

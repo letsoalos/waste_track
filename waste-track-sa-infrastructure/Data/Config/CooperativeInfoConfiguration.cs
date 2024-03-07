@@ -11,13 +11,13 @@ namespace waste_track_sa_infrastructure.Data.Config
 
             builder.HasOne(w => w.WastePicker)
                    .WithOne()
-                   .HasForeignKey<CooperativeInfo>(c => c.WastePickerId);
+                   .HasForeignKey<CooperativeInfo>(c => c.WastePickerId).OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(c => c.Cooperative)
                    .WithMany()
-                   .HasForeignKey(c => c.CooperativeId);
+                   .HasForeignKey(c => c.CooperativeId).OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(w => w.Worksite)
                    .WithOne()
-                   .HasForeignKey<CooperativeInfo>(c => c.WorksiteId);
+                   .HasForeignKey<CooperativeInfo>(c => c.WorksiteId).OnDelete(DeleteBehavior.NoAction);
             builder.Property(c => c.YearJoined).IsRequired();
 
         }

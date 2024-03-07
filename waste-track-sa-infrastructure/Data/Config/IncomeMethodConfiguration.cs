@@ -8,6 +8,7 @@ namespace waste_track_sa_infrastructure.Data.Config
     {
         public void Configure(EntityTypeBuilder<IncomeMethod> builder)
         {
+            //builder.Property(i => i.Id).ValueGeneratedOnAdd().UseIdentityColumn();
             builder.Property(i => i.Name).IsRequired().HasMaxLength(10);
         }
     }

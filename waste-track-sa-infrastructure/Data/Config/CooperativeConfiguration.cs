@@ -8,6 +8,7 @@ namespace waste_track_sa_infrastructure.Data.Config
     {
         public void Configure(EntityTypeBuilder<Cooperative> builder)
         {
+            //builder.Property(c => c.Id).ValueGeneratedOnAdd();
             builder.Property(c => c.Name).IsRequired().HasMaxLength(100);
         }
     }

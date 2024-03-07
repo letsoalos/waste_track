@@ -1,111 +1,111 @@
 [
     {
-        "Id": 1,
-        "WastePickerId": 1,
+       
+        "WastePickerId": 8,
         "Year": "2005",
         "WorksiteId": 1,
-        "MunicipalityId": 1,
-        "IncomeMethodId": 1,
-        "SortingAreaId": 7,
+        "MunicipalityId": 2,
+        "IncomeMethodId": 10,
+        "SortingAreaId": 34,
         "Address": "Marie Louise",
         "Comment": "NULL"
     },
     {
-        "Id": 2,
+      
         "WastePickerId": 2,
         "Year": "2004",
         "WorksiteId": 1,
-        "MunicipalityId": 1,
-        "IncomeMethodId": 1,
-        "SortingAreaId": 8,
+        "MunicipalityId": 2,
+        "IncomeMethodId": 10,
+        "SortingAreaId": 35,
         "Address": "Marie Louise",
         "Comment": "NULL"
     },
     {
-        "Id": 3,
+       
         "WastePickerId": 3,
         "Year": "2004",
         "WorksiteId": 1,
-        "MunicipalityId": 1,
-        "IncomeMethodId": 1,
-        "SortingAreaId": 7,
+        "MunicipalityId": 2,
+        "IncomeMethodId": 10,
+        "SortingAreaId": 34,
         "Address": "Marie Louise",
         "Comment": "NULL"
     },
     {
-        "Id": 4,
-        "WastePickerId": 4,
-        "Year": "2005",
-        "WorksiteId": 1,
-        "MunicipalityId": 1,
-        "IncomeMethodId": 1,
-        "SortingAreaId": 8,
-        "Address": "Landfills",
-        "Comment": "NULL"
-    },
-    {
-        "Id": 5,
-        "WastePickerId": 4,
-        "Year": "2009",
-        "WorksiteId": 1,
-        "MunicipalityId": 1,
-        "IncomeMethodId": 1,
-        "SortingAreaId": 8,
-        "Address": "Marie Louise",
-        "Comment": "NULL"
-    },
-    {
-        "Id": 6,
-        "WastePickerId": 6,
-        "Year": "2006",
-        "WorksiteId": 1,
-        "MunicipalityId": 1,
-        "IncomeMethodId": 3,
-        "SortingAreaId": 6,
-        "Address": "Landfills",
-        "Comment": "NULL"
-    },
-    {
-        "Id": 7,
-        "WastePickerId": 7,
-        "Year": "2005",
-        "WorksiteId": 1,
-        "MunicipalityId": 1,
-        "IncomeMethodId": 2,
-        "SortingAreaId": 8,
-        "Address": "Marie Louise",
-        "Comment": "NULL"
-    },
-    {
-        "Id": 8,
+       
         "WastePickerId": 4,
         "Year": "2005",
         "WorksiteId": 1,
         "MunicipalityId": 2,
-        "IncomeMethodId": 3,
-        "SortingAreaId": 3,
+        "IncomeMethodId": 10,
+        "SortingAreaId": 35,
+        "Address": "Landfills",
+        "Comment": "NULL"
+    },
+    {
+        
+        "WastePickerId": 4,
+        "Year": "2009",
+        "WorksiteId": 1,
+        "MunicipalityId": 2,
+        "IncomeMethodId": 10,
+        "SortingAreaId": 35,
+        "Address": "Marie Louise",
+        "Comment": "NULL"
+    },
+    {
+       
+        "WastePickerId": 6,
+        "Year": "2006",
+        "WorksiteId": 1,
+        "MunicipalityId": 2,
+        "IncomeMethodId": 12,
+        "SortingAreaId": 33,
+        "Address": "Landfills",
+        "Comment": "NULL"
+    },
+    {
+        
+        "WastePickerId": 7,
+        "Year": "2005",
+        "WorksiteId": 1,
+        "MunicipalityId": 2,
+        "IncomeMethodId": 11,
+        "SortingAreaId": 35,
+        "Address": "Marie Louise",
+        "Comment": "NULL"
+    },
+    {
+        
+        "WastePickerId": 4,
+        "Year": "2005",
+        "WorksiteId": 1,
+        "MunicipalityId": 2,
+        "IncomeMethodId": 12,
+        "SortingAreaId": 30,
         "Address": "31298 Dyokwe street  Makaza",
         "Comment": "NULL"
     },
     {
-        "Id": 9,
+       
         "WastePickerId": 9,
         "Year": "2014",
         "WorksiteId": 4,
         "MunicipalityId": 2,
-        "IncomeMethodId": 2,
-        "SortingAreaId": 8,
+        "IncomeMethodId": 11,
+        "SortingAreaId": 35,
         "Address": "U401 kokoti str site b",
         "Comment": "NULL"
     },
     {
-        "Id": 10,
+        
         "WastePickerId": 10,
         "Year": "2020",
         "WorksiteId": 4,
         "MunicipalityId": 2,
-        "IncomeMethodId": 1,
-        "SortingAreaId": 3,
+        "IncomeMethodId": 10,
+        "SortingAreaId": 30,
         "Address": "31504 hlika str",
         "Comment": "NULL"
     }

@@ -7,7 +7,7 @@ namespace waste_track_sa_core.Entities
         public bool IsActive { get; set; }
 
 
-        public UserType? UserType { get; set; }
-        public User? User { get; set; }
+        public UserType UserType { get; set; }
+        public User User { get; set; }
     }
 }

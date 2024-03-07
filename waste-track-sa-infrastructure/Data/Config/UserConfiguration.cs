@@ -11,7 +11,7 @@ namespace waste_track_sa_infrastructure.Data.Config
             builder.Property(u => u.Username).IsRequired().HasMaxLength(50);
             builder.Property(u => u.Email).IsRequired();
             builder.Property(u => u.RegistrationNo).IsRequired();
-            builder.HasOne(u => u.UserType).WithMany().HasForeignKey(u => u.UserTypeId);
+            builder.HasOne(u => u.UserType).WithMany().HasForeignKey(u => u.UserTypeId).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

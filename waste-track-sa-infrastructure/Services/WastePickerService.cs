@@ -21,7 +21,7 @@ namespace waste_track_sa_infrastructure.Services
         {
              var spec = new WastePickersWithLookUpDataSpecification();
 
-            return await _unitOfWork.Repository<WastePicker>().GetEntityWithSpec(spec);
+            return await _unitOfWork.Repository<WastePicker>().GetEntityWithSpec(x => x.Id == id, spec);
         }
 
         public async Task<IReadOnlyList<WastePicker>> GetWastePickersAsync()

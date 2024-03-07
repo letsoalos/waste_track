@@ -8,9 +8,9 @@ namespace waste_track_sa_infrastructure.Data.Config
     {
         public void Configure(EntityTypeBuilder<WastePickerDocument> builder)
         {
-            builder.HasOne(w => w.WastePicker).WithOne().HasForeignKey<WastePickerDocument>(w => w.WastePickerId);
+            builder.HasOne(w => w.WastePicker).WithOne().HasForeignKey<WastePickerDocument>(w => w.WastePickerId).OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(d => d.DocumentType).WithMany().HasForeignKey(w => w.DocumentTypeId);
-            builder.HasOne(m => m.MasterCode).WithOne().HasForeignKey<WastePickerDocument>(w => w.MasterCodeId);
+            builder.HasOne(m => m.MasterCode).WithOne().HasForeignKey<WastePickerDocument>(w => w.MasterCodeId).OnDelete(DeleteBehavior.NoAction);
             builder.Property(w => w.Potrait).IsRequired();
         }
     }

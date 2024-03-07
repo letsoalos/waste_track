@@ -8,6 +8,7 @@ namespace waste_track_sa_infrastructure.Data.Config
     {
         public void Configure(EntityTypeBuilder<SortingArea> builder)
         {
+            //builder.Property(s => s.Id).ValueGeneratedOnAdd();
             builder.Property(s => s.Name).IsRequired().HasMaxLength(100);
         }
     }

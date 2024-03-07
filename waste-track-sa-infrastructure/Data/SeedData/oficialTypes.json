@@ -1,14 +1,14 @@
 [
     {
-        "Id": 1,
+        
         "Name": "Waste Picker Representative"
     },
     {
-        "Id": 2,
+        
         "Name": "Municipality Official"
     },
     {
-        "Id": 3,
+        
         "Name": "Organization Official"
     }
 ]

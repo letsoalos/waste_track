@@ -1,31 +1,31 @@
 [
     {
-        "Id": 1,
+        
         "Name": "Registered",
         "Code": "New"
     },
     {
-        "Id": 2,
+        
         "Name": "Updated",
         "Code": "Update"
     },
     {
-        "Id": 3,
+        
         "Name": "Return to registrar",
         "Code": "Verify"
     },
     {
-        "Id": 4,
+        
         "Name": "Successfully verified",
         "Code": "Verify"
     },
     {
-        "Id": 5,
+       
         "Name": "Suspended",
         "Code": "Inactive"
     },
     {
-        "Id": 6,
+        
         "Name": "Deleted",
         "Code": "Inactive"
     }
