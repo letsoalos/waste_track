@@ -1,4 +1,5 @@
 using waste_track_sa_core.Entities;
+using waste_track_sa_core.Specifications;
 
 namespace waste_track_sa_core.Interfaces
 {
@@ -9,7 +10,7 @@ namespace waste_track_sa_core.Interfaces
             int WastePickerNo, string Comment, int Consent, string CreatedBy, DateTime CreatedDate, string LastUpdatedBy, DateTime LastUpdatedDate, 
             string RegistrationLocation, int WastePickerStatusId, int GenderId, int RaceId, bool IsMemberCooperative, int CooperativeId, int ActivityStatusId,                       
             DateTime LastActivityDate, int PrintCount, int ManualPrintCount, int AutoPrintCount);
-        Task<IReadOnlyList<WastePicker>> GetWastePickersAsync();
+        Task<IReadOnlyList<WastePicker>> GetWastePickersAsync(WastePickerSpecParams wastePickerParams);
         Task<WastePicker> GetWastePickerByIdAsync(int id);
         Task<Gender> GetGenderByWastePickerIdAsync(int id);
         Task<WastePickerStatus> GetWastePickerStatusByIdAsync(int id);

@@ -19,36 +19,42 @@ namespace waste_track_sa_infrastructure.Services
 
         public async Task<WastePicker> GetWastePickerByIdAsync(int id)
         {
-             var spec = new WastePickersWithLookUpDataSpecification();
+             var spec = new WastePickersWithLookUpDataSpecification(id);
 
-            return await _unitOfWork.Repository<WastePicker>().GetEntityWithSpec(x => x.Id == id, spec);
+            return await _unitOfWork.Repository<WastePicker>().GetEntityWithSpec(spec);
         }
 
-        public async Task<IReadOnlyList<WastePicker>> GetWastePickersAsync()
+        public async Task<IReadOnlyList<WastePicker>> GetWastePickersAsync(WastePickerSpecParams wastePickerParams)
         {
-            var spec = new WastePickersWithLookUpDataSpecification();
+            var spec = new WastePickersWithLookUpDataSpecification(wastePickerParams);
+
+            var countSpec = new WastePickerWithFiletrsForCountSpecification(wastePickerParams);
+
+            var totalWastePickers = await _unitOfWork.Repository<WastePicker>().CountAsync(spec);
            
             return await _unitOfWork.Repository<WastePicker>().ListAsync(spec);
         }
 
         public async Task<Gender> GetGenderByWastePickerIdAsync(int id)
         {
-            return await _unitOfWork.Repository<Gender>().GetByIdAsync(id);
+            return await _unitOfWork.Repository<Gender>().Get(x => x.Id == id);
         }
 
         public async Task<WastePickerStatus> GetWastePickerStatusByIdAsync(int id)
         {
-           return await _unitOfWork.Repository<WastePickerStatus>().GetByIdAsync(id);
+           return await _unitOfWork.Repository<WastePickerStatus>().Get(x => x.Id == id);
         }
 
         public async Task<Race> GetRaceByWastePickerIdAsync(int id)
         {
-           return await _unitOfWork.Repository<Race>().GetByIdAsync(id);
+           return await _unitOfWork.Repository<Race>().Get(x => x.Id == id);
         }
 
         public async Task<DocumentType> GetDocumentTypeByWastePickerIdAsync(int id)
         {
-            return await _unitOfWork.Repository<DocumentType>().GetByIdAsync(id); 
+            return await _unitOfWork.Repository<DocumentType>().Get(x => x.Id == id);
         }
+
+     
     }
 }

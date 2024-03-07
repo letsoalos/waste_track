@@ -18,7 +18,7 @@ namespace waste_track_sa_infrastructure.Services
 
         public async Task<IReadOnlyList<Cooperative>> GetCooperativesAsync()
         {
-            return await _unitOfWork.Repository<Cooperative>().ListAllAsync();
+            return await _unitOfWork.Repository<Cooperative>().GetAllAsync();
         }
     }
 }
