@@ -6,8 +6,8 @@ namespace waste_track_sa_core.Entities
         public string SystemSettingValue { get; set; }
         public int ValueDataType { get; set; }
         public string CreatedBy { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public string CreatedDate { get; set; } = DateTime.Now.ToString();
         public string ModifiedBy { get; set; }
-        public DateTime ModifiedDate { get; set; }
+        public string ModifiedDate { get; set; }
     }
 }

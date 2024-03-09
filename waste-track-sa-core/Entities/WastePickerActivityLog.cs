@@ -6,9 +6,9 @@ namespace waste_track_sa_core.Entities
         public int WastePickerStatusId { get; set; }
         public string LogCode { get; set; }
         public string Description { get; set; }
-        public DateTime ActivityDate { get; set; }
+        public string ActivityDate { get; set; }
         public int ActivityStatusId { get; set; }          //status table not available
-        public DateTime CreatedDate { get; set; }
+        public string CreatedDate { get; set; } = DateTime.Now.ToString();
 
 
         public WastePickerStatus WastePickerStatus { get; set; }

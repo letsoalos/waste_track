@@ -6,9 +6,9 @@ namespace waste_track_sa_core.Entities
         public int DocumentTypeId { get; set; }
         public int MasterCodeId { get; set; }
         public string Potrait { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public string CreatedDate { get; set; } = DateTime.Now.ToString();
         public string CreatedBy { get; set; }
-        public DateTime LastUpdatedDate { get; set; }
+        public string LastUpdatedDate { get; set; }
         public string LastUpdatedBy { get; set; }
 
        

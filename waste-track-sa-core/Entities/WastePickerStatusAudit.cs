@@ -4,7 +4,7 @@ namespace waste_track_sa_core.Entities
     {
         public int WastePickerId { get; set; }
         public int WastePickerStatusId { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public string CreatedDate { get; set; } = DateTime.Now.ToString();
         public string CreatedBy { get; set; }
         public string Comment { get; set; }
 

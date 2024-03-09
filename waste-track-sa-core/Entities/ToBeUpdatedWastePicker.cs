@@ -5,7 +5,7 @@ namespace waste_track_sa_core.Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int WastePickerNo { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public string CreatedDate { get; set; } = DateTime.Now.ToString();
         
     }
 }

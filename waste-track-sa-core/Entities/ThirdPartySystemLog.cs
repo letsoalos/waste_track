@@ -7,7 +7,7 @@ namespace waste_track_sa_core.Entities
         public string Details { get; set; }
         public string Description { get; set; }
         public string SourceIP { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public string CreatedDate { get; set; } = DateTime.Now.ToString();
 
 
         public ThirdPartySystem ThirdPartySystem { get; set; }

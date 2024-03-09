@@ -15,15 +15,15 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "APIs",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Active = table.Column<bool>(type: "bit", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Active = table.Column<bool>(type: "INTEGER", nullable: false),
+                    Description = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    CreatedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    ModifiedDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    ModifiedBy = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -34,11 +34,11 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "CardPrintWastePickers",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    RegistrationNo = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    FirstName = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    LastName = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    RegistrationNo = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -49,16 +49,16 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "Cooperatives",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    YearEstablish = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsRegistered = table.Column<bool>(type: "bit", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastUpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastUpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    YearEstablish = table.Column<string>(type: "TEXT", nullable: true),
+                    IsRegistered = table.Column<bool>(type: "INTEGER", nullable: false),
+                    IsActive = table.Column<bool>(type: "INTEGER", nullable: false),
+                    CreatedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    LastUpdatedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    LastUpdatedDate = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -69,14 +69,14 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "ErrorLogs",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LogDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Method = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Class = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ErrorMessage = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SourceAddress = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Username = table.Column<string>(type: "TEXT", nullable: true),
+                    LogDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Method = table.Column<string>(type: "TEXT", nullable: true),
+                    Class = table.Column<string>(type: "TEXT", nullable: true),
+                    ErrorMessage = table.Column<string>(type: "TEXT", nullable: true),
+                    SourceAddress = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -87,9 +87,9 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "Gender",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 10, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -100,22 +100,22 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "GetEmailContents",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Subject = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
-                    Type = table.Column<int>(type: "int", nullable: false),
-                    Attachment = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
-                    ToAddress = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    CCAddress = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    BCAddress = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    StatusId = table.Column<int>(type: "int", nullable: false),
-                    Attempts = table.Column<int>(type: "int", nullable: false),
-                    ErrorMessage = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Content = table.Column<string>(type: "TEXT", nullable: false),
+                    Subject = table.Column<string>(type: "TEXT", maxLength: 250, nullable: false),
+                    Type = table.Column<int>(type: "INTEGER", nullable: false),
+                    Attachment = table.Column<string>(type: "TEXT", maxLength: 500, nullable: true),
+                    ToAddress = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    CCAddress = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
+                    BCAddress = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
+                    StatusId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Attempts = table.Column<int>(type: "INTEGER", nullable: false),
+                    ErrorMessage = table.Column<string>(type: "TEXT", nullable: true),
+                    CreatedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    ModifiedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    ModifiedDate = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -126,9 +126,9 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "IncomeMethods",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 10, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -139,9 +139,9 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "MasterCodes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -152,9 +152,9 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "OfficialTypes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -165,9 +165,9 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "OrganizationTypes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -178,9 +178,9 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "Provinces",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -191,9 +191,9 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "Race",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 10, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -204,9 +204,9 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "SortingAreas",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -217,17 +217,17 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "SystemLogs",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    LogDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LogAction = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RecordId = table.Column<int>(type: "int", nullable: false),
-                    Group = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SourceAddress = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserId = table.Column<int>(type: "INTEGER", nullable: false),
+                    LogDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    LogAction = table.Column<string>(type: "TEXT", nullable: true),
+                    RecordId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Group = table.Column<string>(type: "TEXT", nullable: true),
+                    Description = table.Column<string>(type: "TEXT", nullable: true),
+                    Status = table.Column<string>(type: "TEXT", nullable: true),
+                    Username = table.Column<string>(type: "TEXT", nullable: true),
+                    SourceAddress = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -238,15 +238,15 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "SystemSettings",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    SystemSettingName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SystemSettingValue = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ValueDataType = table.Column<int>(type: "int", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    SystemSettingName = table.Column<string>(type: "TEXT", nullable: true),
+                    SystemSettingValue = table.Column<string>(type: "TEXT", nullable: true),
+                    ValueDataType = table.Column<int>(type: "INTEGER", nullable: false),
+                    CreatedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    CreatedDate = table.Column<string>(type: "TEXT", nullable: true),
+                    ModifiedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    ModifiedDate = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -257,26 +257,26 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "ThirdPartySystems",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    SystemName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SystemURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SystemDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    OrganizationName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    OrganizationWebsite = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AccountStatus = table.Column<int>(type: "int", nullable: false),
-                    ReferenceNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ContactFirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ContactLastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ContactNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ContactEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AccountActivationCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AccountActivationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    APIKey = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    SystemName = table.Column<string>(type: "TEXT", nullable: true),
+                    SystemURL = table.Column<string>(type: "TEXT", nullable: true),
+                    SystemDescription = table.Column<string>(type: "TEXT", nullable: true),
+                    OrganizationName = table.Column<string>(type: "TEXT", nullable: true),
+                    OrganizationWebsite = table.Column<string>(type: "TEXT", nullable: true),
+                    AccountStatus = table.Column<int>(type: "INTEGER", nullable: false),
+                    ReferenceNumber = table.Column<string>(type: "TEXT", nullable: true),
+                    ContactFirstName = table.Column<string>(type: "TEXT", nullable: true),
+                    ContactLastName = table.Column<string>(type: "TEXT", nullable: true),
+                    ContactNumber = table.Column<string>(type: "TEXT", nullable: true),
+                    ContactEmail = table.Column<string>(type: "TEXT", nullable: true),
+                    AccountActivationCode = table.Column<string>(type: "TEXT", nullable: true),
+                    AccountActivationDate = table.Column<string>(type: "TEXT", nullable: true),
+                    APIKey = table.Column<string>(type: "TEXT", nullable: true),
+                    CreatedDate = table.Column<string>(type: "TEXT", nullable: true),
+                    CreatedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    ModifiedDate = table.Column<string>(type: "TEXT", nullable: true),
+                    ModifiedBy = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -287,12 +287,12 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "ToBeUpdatedWastePickers",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    WastePickerNo = table.Column<int>(type: "int", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    FirstName = table.Column<string>(type: "TEXT", nullable: true),
+                    LastName = table.Column<string>(type: "TEXT", nullable: true),
+                    WastePickerNo = table.Column<int>(type: "INTEGER", nullable: false),
+                    CreatedDate = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -303,14 +303,14 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "UserSessions",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    LoginTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LogoutTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LoginStatus = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LogoutStatus = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Token = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    LoginTime = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    LogoutTime = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Username = table.Column<string>(type: "TEXT", nullable: true),
+                    LoginStatus = table.Column<string>(type: "TEXT", nullable: true),
+                    LogoutStatus = table.Column<string>(type: "TEXT", nullable: true),
+                    Token = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -321,9 +321,9 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "UserTypes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -334,10 +334,10 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "WastePickerStatuses",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Code = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    Code = table.Column<string>(type: "TEXT", maxLength: 10, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -348,9 +348,9 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "Worksites",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -361,10 +361,10 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "DocumentTypes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    DocType = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    MasterCodeId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    DocType = table.Column<string>(type: "TEXT", maxLength: 20, nullable: false),
+                    MasterCodeId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -380,13 +380,13 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "Districts",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
-                    Code = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    Contacts = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProviceId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Address = table.Column<string>(type: "TEXT", maxLength: 250, nullable: false),
+                    Code = table.Column<string>(type: "TEXT", maxLength: 10, nullable: false),
+                    Contacts = table.Column<string>(type: "TEXT", nullable: true),
+                    ProviceId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -402,15 +402,15 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "APIAccesses",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ThirdPartySystemId = table.Column<int>(type: "int", nullable: false),
-                    APIId = table.Column<int>(type: "int", nullable: false),
-                    Deleted = table.Column<bool>(type: "bit", nullable: false),
-                    DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    ThirdPartySystemId = table.Column<int>(type: "INTEGER", nullable: false),
+                    APIId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Deleted = table.Column<bool>(type: "INTEGER", nullable: false),
+                    DateCreated = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    CreatedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    ModifiedDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    ModifiedBy = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -433,14 +433,14 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "ThirdPartySystemLogs",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ThirdPartySystemId = table.Column<int>(type: "int", nullable: false),
-                    APIId = table.Column<int>(type: "int", nullable: false),
-                    Details = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SourceIP = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    ThirdPartySystemId = table.Column<int>(type: "INTEGER", nullable: false),
+                    APIId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Details = table.Column<string>(type: "TEXT", nullable: true),
+                    Description = table.Column<string>(type: "TEXT", nullable: true),
+                    SourceIP = table.Column<string>(type: "TEXT", nullable: true),
+                    CreatedDate = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -463,19 +463,19 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserTypeId = table.Column<int>(type: "int", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RegistrationNo = table.Column<int>(type: "int", nullable: false),
-                    ActivationCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EmailVerified = table.Column<bool>(type: "bit", nullable: false),
-                    EmailVerifiedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastPasswordChangedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Username = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    Password = table.Column<string>(type: "TEXT", nullable: true),
+                    UserTypeId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Email = table.Column<string>(type: "TEXT", nullable: false),
+                    Status = table.Column<string>(type: "TEXT", nullable: true),
+                    RegistrationNo = table.Column<int>(type: "INTEGER", nullable: false),
+                    ActivationCode = table.Column<string>(type: "TEXT", nullable: true),
+                    EmailVerified = table.Column<bool>(type: "INTEGER", nullable: false),
+                    EmailVerifiedDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    LastPasswordChangedDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    PasswordHash = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -491,15 +491,15 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "WastePickerActivityLogs",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    RegistrationNo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    WastePickerStatusId = table.Column<int>(type: "int", nullable: false),
-                    LogCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ActivityDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ActivityStatusId = table.Column<int>(type: "int", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    RegistrationNo = table.Column<string>(type: "TEXT", nullable: true),
+                    WastePickerStatusId = table.Column<int>(type: "INTEGER", nullable: false),
+                    LogCode = table.Column<string>(type: "TEXT", nullable: true),
+                    Description = table.Column<string>(type: "TEXT", nullable: true),
+                    ActivityDate = table.Column<string>(type: "TEXT", nullable: true),
+                    ActivityStatusId = table.Column<int>(type: "INTEGER", nullable: false),
+                    CreatedDate = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -516,36 +516,36 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "WastePickers",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    DOB = table.Column<DateOnly>(type: "date", nullable: false),
-                    IdentityNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    OtherIdentityNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Age = table.Column<int>(type: "int", nullable: false),
-                    CellphoneNo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AltCellphoneNo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Potrait = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DocumentTypeId = table.Column<int>(type: "int", nullable: false),
-                    WastePickerNo = table.Column<int>(type: "int", nullable: false),
-                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Consent = table.Column<int>(type: "int", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastUpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastUpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    RegistrationLocation = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    WastePickerStatusId = table.Column<int>(type: "int", nullable: false),
-                    GenderId = table.Column<int>(type: "int", nullable: false),
-                    RaceId = table.Column<int>(type: "int", nullable: false),
-                    IsMemberCooperative = table.Column<bool>(type: "bit", nullable: false),
-                    CooperativeId = table.Column<int>(type: "int", nullable: false),
-                    ActivityStatusId = table.Column<int>(type: "int", nullable: false),
-                    LastActivityDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PrintCount = table.Column<int>(type: "int", nullable: false),
-                    ManualPrintCount = table.Column<int>(type: "int", nullable: false),
-                    AutoPrintCount = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    FirstName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    LastName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    DOB = table.Column<string>(type: "TEXT", nullable: false),
+                    IdentityNumber = table.Column<string>(type: "TEXT", nullable: true),
+                    OtherIdentityNumber = table.Column<string>(type: "TEXT", nullable: true),
+                    Age = table.Column<int>(type: "INTEGER", nullable: false),
+                    CellphoneNo = table.Column<string>(type: "TEXT", nullable: true),
+                    AltCellphoneNo = table.Column<string>(type: "TEXT", nullable: true),
+                    Potrait = table.Column<string>(type: "TEXT", nullable: true),
+                    DocumentTypeId = table.Column<int>(type: "INTEGER", nullable: false),
+                    WastePickerNo = table.Column<int>(type: "INTEGER", nullable: false),
+                    Comment = table.Column<string>(type: "TEXT", nullable: true),
+                    Consent = table.Column<int>(type: "INTEGER", nullable: false),
+                    CreatedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    CreatedDate = table.Column<string>(type: "TEXT", nullable: true),
+                    LastUpdatedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    LastUpdatedDate = table.Column<string>(type: "TEXT", nullable: true),
+                    RegistrationLocation = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    WastePickerStatusId = table.Column<int>(type: "INTEGER", nullable: false),
+                    GenderId = table.Column<int>(type: "INTEGER", nullable: false),
+                    RaceId = table.Column<int>(type: "INTEGER", nullable: false),
+                    IsMemberCooperative = table.Column<bool>(type: "INTEGER", nullable: false),
+                    CooperativeId = table.Column<int>(type: "INTEGER", nullable: false),
+                    ActivityStatusId = table.Column<int>(type: "INTEGER", nullable: false),
+                    LastActivityDate = table.Column<string>(type: "TEXT", nullable: true),
+                    PrintCount = table.Column<int>(type: "INTEGER", nullable: false),
+                    ManualPrintCount = table.Column<int>(type: "INTEGER", nullable: false),
+                    AutoPrintCount = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -581,13 +581,13 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "Municipalities",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
-                    Code = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    Contacts = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
-                    DistrictId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Address = table.Column<string>(type: "TEXT", maxLength: 250, nullable: false),
+                    Code = table.Column<string>(type: "TEXT", maxLength: 10, nullable: false),
+                    Contacts = table.Column<string>(type: "TEXT", maxLength: 15, nullable: false),
+                    DistrictId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -604,11 +604,11 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "UserRoles",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserTypeId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserTypeId = table.Column<int>(type: "INTEGER", nullable: false),
+                    UserId = table.Column<int>(type: "INTEGER", nullable: false),
+                    IsActive = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -631,20 +631,20 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "CooperativeInfo",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    WastePickerId = table.Column<int>(type: "int", nullable: false),
-                    CooperativeId = table.Column<int>(type: "int", nullable: false),
-                    WastePickerStartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    WorksiteId = table.Column<int>(type: "int", nullable: false),
-                    Consent = table.Column<int>(type: "int", nullable: false),
-                    YearJoined = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IActive = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastUpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastUpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    WastePickerId = table.Column<int>(type: "INTEGER", nullable: false),
+                    CooperativeId = table.Column<int>(type: "INTEGER", nullable: false),
+                    WastePickerStartDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    WorksiteId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Consent = table.Column<int>(type: "INTEGER", nullable: false),
+                    YearJoined = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Comment = table.Column<string>(type: "TEXT", nullable: true),
+                    IActive = table.Column<bool>(type: "INTEGER", nullable: false),
+                    CreatedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    LastUpdatedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    LastUpdatedDate = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -670,13 +670,13 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "GetWastePickerStatusAudits",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    WastePickerId = table.Column<int>(type: "int", nullable: false),
-                    WastePickerStatusId = table.Column<int>(type: "int", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    WastePickerId = table.Column<int>(type: "INTEGER", nullable: false),
+                    WastePickerStatusId = table.Column<int>(type: "INTEGER", nullable: false),
+                    CreatedDate = table.Column<string>(type: "TEXT", nullable: true),
+                    CreatedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    Comment = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -697,16 +697,16 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "WastePickerDocuments",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    WastePickerId = table.Column<int>(type: "int", nullable: false),
-                    DocumentTypeId = table.Column<int>(type: "int", nullable: false),
-                    MasterCodeId = table.Column<int>(type: "int", nullable: false),
-                    Potrait = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastUpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastUpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    WastePickerId = table.Column<int>(type: "INTEGER", nullable: false),
+                    DocumentTypeId = table.Column<int>(type: "INTEGER", nullable: false),
+                    MasterCodeId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Potrait = table.Column<string>(type: "TEXT", nullable: false),
+                    CreatedDate = table.Column<string>(type: "TEXT", nullable: true),
+                    CreatedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    LastUpdatedDate = table.Column<string>(type: "TEXT", nullable: true),
+                    LastUpdatedBy = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -733,14 +733,14 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "Organizations",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    OrganizationTypeId = table.Column<int>(type: "int", nullable: false),
-                    MunicipalityId = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
-                    Contacts = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
-                    Code = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    OrganizationTypeId = table.Column<int>(type: "INTEGER", nullable: false),
+                    MunicipalityId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Address = table.Column<string>(type: "TEXT", maxLength: 250, nullable: false),
+                    Contacts = table.Column<string>(type: "TEXT", maxLength: 15, nullable: true),
+                    Code = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -762,16 +762,16 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "ReclaimingInfo",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    WastePickerId = table.Column<int>(type: "int", nullable: false),
-                    Year = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    WorksiteId = table.Column<int>(type: "int", nullable: false),
-                    MunicipalityId = table.Column<int>(type: "int", nullable: false),
-                    IncomeMethodId = table.Column<int>(type: "int", nullable: false),
-                    SortingAreaId = table.Column<int>(type: "int", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
-                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    WastePickerId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Year = table.Column<string>(type: "TEXT", nullable: true),
+                    WorksiteId = table.Column<int>(type: "INTEGER", nullable: false),
+                    MunicipalityId = table.Column<int>(type: "INTEGER", nullable: false),
+                    IncomeMethodId = table.Column<int>(type: "INTEGER", nullable: false),
+                    SortingAreaId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Address = table.Column<string>(type: "TEXT", maxLength: 250, nullable: true),
+                    Comment = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -807,17 +807,17 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                 name: "UserInfo",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Telephone = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RegDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    MunicipalityId = table.Column<int>(type: "int", nullable: false),
-                    OrganizationId = table.Column<int>(type: "int", nullable: false),
-                    Consent = table.Column<int>(type: "int", nullable: false),
-                    OfficialTypeId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserId = table.Column<int>(type: "INTEGER", nullable: false),
+                    FirstName = table.Column<string>(type: "TEXT", nullable: true),
+                    LastName = table.Column<string>(type: "TEXT", nullable: true),
+                    Telephone = table.Column<string>(type: "TEXT", nullable: true),
+                    RegDate = table.Column<string>(type: "TEXT", nullable: true),
+                    MunicipalityId = table.Column<int>(type: "INTEGER", nullable: false),
+                    OrganizationId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Consent = table.Column<int>(type: "INTEGER", nullable: false),
+                    OfficialTypeId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

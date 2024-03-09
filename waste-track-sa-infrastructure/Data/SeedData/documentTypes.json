@@ -1,22 +1,22 @@
 [
     {
-        
+        "Id": 1,
         "DocType": "SA ID",
-        "MasterCodeId": 7
+        "MasterCodeId": 1
     },
     {
-        
+        "Id": 2,
         "DocType": "Other",
-        "MasterCodeId": 7
+        "MasterCodeId": 1
     },
     {
-        
+        "Id": 3,
         "DocType": "None",
-        "MasterCodeId": 7
+        "MasterCodeId": 1
     },
     {
-        
+        "Id": 4,
         "DocType": "Payslip",
-        "MasterCodeId": 8
+        "MasterCodeId": 2
     } 
 ]

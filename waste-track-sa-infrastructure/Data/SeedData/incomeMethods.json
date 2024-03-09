@@ -1,14 +1,14 @@
 [
     {
-        
+        "Id": 1,
         "Name": "Cash"
     },
     {
-        
+        "Id": 2,
         "Name": "EFT"
     },
     {
-        
+        "Id": 3,
         "Name": "Both"
     }
     

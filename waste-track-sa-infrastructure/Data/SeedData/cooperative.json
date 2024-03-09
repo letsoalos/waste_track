@@ -1,6 +1,6 @@
 [
     {
-       
+        "Id": 1,       
         "Name": "Bokamoso",
         "YearEstablish": "2015",
         "IsRegistered": true,
@@ -11,7 +11,7 @@
         "LastUpdatedDate": "2022-02-15T09:29:16.823Z"
     },
     {
-        
+        "Id": 2,
         "Name": "Green up",
         "YearEstablish": "2020",
         "IsRegistered": true,
@@ -22,7 +22,7 @@
         "LastUpdatedDate": "2022-02-15T09:29:16.823Z"
     },
     {
-        
+        "Id": 3,
         "Name": "Makhaza community recycling",
         "YearEstablish": "2021",
         "IsRegistered": true,
@@ -33,7 +33,7 @@
         "LastUpdatedDate": "2022-02-15T09:29:16.823Z"
     },
     {
-        
+        "Id": 4,
         "Name": "ABMP cooperative",
         "YearEstablish": "2005",
         "IsRegistered": true,
@@ -44,7 +44,7 @@
         "LastUpdatedDate": "2022-02-15T09:29:16.823Z"
     },
     {
-        
+        "Id": 5,
         "Name": "Vaal park recycling center ",
         "YearEstablish": "2017",
         "IsRegistered": true,

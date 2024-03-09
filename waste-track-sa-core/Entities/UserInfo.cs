@@ -6,7 +6,7 @@ namespace waste_track_sa_core.Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Telephone { get; set; }
-        public DateTime RegDate { get; set; }
+        public string RegDate { get; set; }
         public int MunicipalityId { get; set; }
         public int OrganizationId { get; set; }
         public int Consent { get; set; }

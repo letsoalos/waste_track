@@ -6,7 +6,7 @@ namespace waste_track_sa_core.Entities
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public DateOnly DOB { get; set; }
+        public string DOB { get; set; }
         public string IdentityNumber { get; set; }
         public string OtherIdentityNumber { get; set; }
         public int Age { get; set; }
@@ -18,9 +18,10 @@ namespace waste_track_sa_core.Entities
         public string Comment { get; set; }
         public int Consent { get; set; }
         public string CreatedBy { get; set; }
-        public DateTime CreatedDate { get; set; }
+        //public DateTime CreatedDate { get; set; }
+        public string CreatedDate { get; set; } = DateTime.Now.ToString();
         public string LastUpdatedBy { get; set; }
-        public DateTime LastUpdatedDate { get; set; }
+        public string LastUpdatedDate { get; set; }
         public string RegistrationLocation { get; set; }
         public int WastePickerStatusId { get; set; }
         public int GenderId { get; set; }
@@ -28,7 +29,7 @@ namespace waste_track_sa_core.Entities
         public bool IsMemberCooperative { get; set; }
         public int CooperativeId { get; set; }
         public int ActivityStatusId { get; set; }                      //cant locate related table
-        public DateTime LastActivityDate { get; set; }
+        public string LastActivityDate { get; set; }
         public int PrintCount { get; set; }                            //cant locate related table
         public int ManualPrintCount { get; set; }                     //cant locate related table
         public int AutoPrintCount { get; set; }                       //cant locate related table                     

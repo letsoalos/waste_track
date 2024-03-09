@@ -1,114 +1,114 @@
 [
     {
-        
+        "Id": 1,
         "Name": "City of Ekurhuleni Metropolitan",
         "Address": "Head Office, 15 Queen Street, Germiston",
         "Code": "EKU",
         "Contacts": "0860543000",
-        "ProviceId": 28
+        "ProviceId": 1
     },
     {
-        
+        "Id": 2,
         "Name": "City of Johannesburg Metropolitan",
         "Address": "158 Civic Boulevard, Braamfontein, Johannesburg",
         "Code": "JHB",
         "Contacts": "0114076111",
-        "ProviceId": 28
+        "ProviceId": 1
     },
     {
-        
+        "Id": 3,
         "Name": "City of Tshwane Metropolitan",
         "Address": "Tshwane House, 320 Madiba Street, Pretoria",
         "Code": "TSH",
         "Contacts": "0123589999",
-        "ProviceId": 28
+        "ProviceId": 1
     },
     {
-       
+       "Id": 4,
         "Name": "Sedibeng District",
         "Address": "Cnr Beaconsfield Ave and Leslie Street Vereeniging",
         "Code": "DC42",
         "Contacts": "0164503000",
-        "ProviceId": 28
+        "ProviceId": 1
     },
     {
-        
+        "Id": 5,
         "Name": "West Rand District",
         "Address": "Cnr Sixth & Park Streets, Randfontein",
         "Code": "DC48",
         "Contacts": "0114115000",
-        "ProviceId": 28
+        "ProviceId": 1
     },
     {
-       
+        "Id": 6,
         "Name": "Civic Centre, 12 Hertzog Boulevard, Cape Town",
         "Address": "Cnr Sixth & Park Streets, Randfontein",
         "Code": "CPT",
         "Contacts": "0214001111",
-        "ProviceId": 36
+        "ProviceId": 9
     },
     {
-        
+        "Id": 7,
         "Name": "Cape Winelands District Municipality",
         "Address": "46 Alexander Street, Stellenbosch",
         "Code": "DC2",
         "Contacts": "0861265263",
-        "ProviceId": 36
+        "ProviceId": 9
     },
     {
-        
+        "Id": 8,
         "Name": "Central Karoo District Municipality",
         "Address": "63 Donkin Street, Beaufort West",
         "Code": "DC5",
         "Contacts": "0234491000",
-        "ProviceId": 36
+        "ProviceId": 9
     },
     {
-        
+        "Id": 9,
         "Name": "Garden Route District Municipality",
         "Address": "54 York Street, George",
         "Code": "DC4",
         "Contacts": "0448031300",
-        "ProviceId": 36
+        "ProviceId": 9
     },
     {
-        
+        "Id": 10,
         "Name": "Overberg District Municipality",
         "Address": "26 Long Street, Bredasdorp",
         "Code": "DC3",
         "Contacts": "0284251157",
-        "ProviceId": 36
+        "ProviceId": 9
     },
     {
-        
+        "Id": 11,
         "Name": "West Coast District Municipality",
         "Address": "58 Long Street, Moorreesburg",
         "Code": "DC1",
         "Contacts": "0224338400",
-        "ProviceId": 36
+        "ProviceId": 9
     },
     {
-        
+        "Id": 12,
         "Name": "Capricorn District Municipality",
         "Address": "41 Biccard Street, Polokwane",
         "Code": "DC35",
         "Contacts": "0152941000",
-        "ProviceId": 31
+        "ProviceId": 4
     },
     {
-       
+        "Id": 13,
         "Name": "Mopani District Municipality",
         "Address": "Government Building, Main Road, Giyani",
         "Code": "DC33",
         "Contacts": "0158116300",
-        "ProviceId": 31
+        "ProviceId": 4
     },
     {
-        
+        "Id": 14,
         "Name": "Sekhukhune District Municipality",
         "Address": "7A Van Riebeeck Street, Bareki Mall, Groblersdal",
         "Code": "DC47",
         "Contacts": "0132627300",
-        "ProviceId": 31
+        "ProviceId": 4
     }
 ]

@@ -1,6 +1,6 @@
 [
     {
-       
+        "Id": 1,
         "WastePickerId": 8,
         "Year": "2005",
         "WorksiteId": 1,
@@ -11,7 +11,7 @@
         "Comment": "NULL"
     },
     {
-      
+        "Id": 2,
         "WastePickerId": 2,
         "Year": "2004",
         "WorksiteId": 1,
@@ -22,7 +22,7 @@
         "Comment": "NULL"
     },
     {
-       
+        "Id": 3,
         "WastePickerId": 3,
         "Year": "2004",
         "WorksiteId": 1,
@@ -33,7 +33,7 @@
         "Comment": "NULL"
     },
     {
-       
+        "Id": 4,
         "WastePickerId": 4,
         "Year": "2005",
         "WorksiteId": 1,
@@ -44,7 +44,7 @@
         "Comment": "NULL"
     },
     {
-        
+        "Id": 5,
         "WastePickerId": 4,
         "Year": "2009",
         "WorksiteId": 1,
@@ -55,7 +55,7 @@
         "Comment": "NULL"
     },
     {
-       
+        "Id": 6,
         "WastePickerId": 6,
         "Year": "2006",
         "WorksiteId": 1,
@@ -66,7 +66,7 @@
         "Comment": "NULL"
     },
     {
-        
+        "Id": 7,
         "WastePickerId": 7,
         "Year": "2005",
         "WorksiteId": 1,
@@ -77,7 +77,7 @@
         "Comment": "NULL"
     },
     {
-        
+        "Id": 8,
         "WastePickerId": 4,
         "Year": "2005",
         "WorksiteId": 1,
@@ -88,7 +88,7 @@
         "Comment": "NULL"
     },
     {
-       
+        "Id": 9,
         "WastePickerId": 9,
         "Year": "2014",
         "WorksiteId": 4,
@@ -99,7 +99,7 @@
         "Comment": "NULL"
     },
     {
-        
+        "Id": 10,
         "WastePickerId": 10,
         "Year": "2020",
         "WorksiteId": 4,

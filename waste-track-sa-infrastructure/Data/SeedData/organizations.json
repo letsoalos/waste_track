@@ -1,53 +1,53 @@
 [
     {
-        
-        "OrganizationTypeId": 7,
-        "MunicipalityId": 2,
+        "Id": 1,
+        "OrganizationTypeId": 1,
+        "MunicipalityId": 1,
         "Name": "Tswane Muni",
         "Address": "Tshwane Address",
         "Contacts": "NULL",
         "Code": "122"
     },
     {
-        
-        "OrganizationTypeId": 8,
-        "MunicipalityId": 2,
+        "Id": 2,
+        "OrganizationTypeId": 2,
+        "MunicipalityId": 1,
         "Name": "Tswane Muni",
         "Address": "Tshwane Address",
         "Contacts": "NULL",
         "Code": "0122"
     },
     {
-        
-        "OrganizationTypeId": 8,
-        "MunicipalityId": 2,
+        "Id": 3,
+        "OrganizationTypeId": 2,
+        "MunicipalityId": 1,
         "Name": "Organisation A",
         "Address": "13 street x, 0182",
         "Contacts": "0124569874",
         "Code": "Org1A"
     },
     {
-        
-        "OrganizationTypeId": 8,
-        "MunicipalityId": 3,
+        "Id": 4,
+        "OrganizationTypeId": 2,
+        "MunicipalityId": 2,
         "Name": "Organisation B",
         "Address": "14 street x",
         "Contacts": "0123456787",
         "Code": "ORG1B"
     },
     {
-        
-        "OrganizationTypeId": 7,
-        "MunicipalityId": 2,
+        "Id": 5,
+        "OrganizationTypeId": 1,
+        "MunicipalityId": 1,
         "Name": "Organisation C",
         "Address": "15 street x",
         "Contacts": "0124569874",
         "Code": "OrgC"
     },
     {
-        
-        "OrganizationTypeId": 8,
-        "MunicipalityId": 6,
+        "Id": 6,
+        "OrganizationTypeId": 2,
+        "MunicipalityId": 5,
         "Name": "Organisation Waste Picker",
         "Address": "167 street xy",
         "Contacts": "0124569874",

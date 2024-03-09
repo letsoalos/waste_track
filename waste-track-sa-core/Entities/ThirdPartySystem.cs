@@ -14,11 +14,11 @@ namespace waste_track_sa_core.Entities
         public string ContactNumber { get; set; }
         public string ContactEmail { get; set; }
         public string AccountActivationCode { get; set; }
-        public DateTime AccountActivationDate { get; set; }
+        public string AccountActivationDate { get; set; }
         public string APIKey { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public string CreatedDate { get; set; } = DateTime.Now.ToString();
         public string CreatedBy { get; set; }
-        public DateTime ModifiedDate { get; set; }
+        public string ModifiedDate { get; set; }
         public string ModifiedBy { get; set; }
 
     }
