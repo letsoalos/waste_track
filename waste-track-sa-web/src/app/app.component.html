@@ -1,35 +1,7 @@
 <app-nav-bar></app-nav-bar>
 
 <div class="container-fluid mt-5">
-    <div class="row">
-        <div class="col-12">
-            <table class="table table-hover" style="cursor: pointer;">
-                <thead class="thead-light">
-                    <tr>
-                        <th>Waste Picker No</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>DOB</th>
-                        <th>Cell Number</th>
-                        <th>Registration Location</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let wastePicker of wastePickers" routerLink="/wastePickers/{{wastePicker.id}}"> 
-                        <th> {{wastePicker.wastePickerNo}}</th>                       
-                        <th> {{wastePicker.firstName}}</th>
-                        <th> {{wastePicker.lastName}}</th>
-                        <th> {{wastePicker.dob}}</th>
-                        <th> {{wastePicker.cellphoneNo}}</th>
-                        <th> {{wastePicker.registrationLocation}}</th>
-                        <!--<td>{{order.orderDate | date: 'medium'}}</td>
-                        <td>{{order.total | currency}}</td>
-                        <td>{{order.status}}</td>-->
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <app-waste-picker-list></app-waste-picker-list>
 </div>
 
 <app-footer></app-footer>
