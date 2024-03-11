@@ -11,6 +11,10 @@ export class WastePickerService {
   constructor(private http: HttpClient) { }
 
   getWastePickers() {
-    return this.http.get<WastePickerDto[]>(this.baseUrl + 'WastePicker/get-waste-pickers');
+    return this.http.get<WastePickerDto>(this.baseUrl + 'WastePicker/get-waste-pickers');
+  }
+
+  getWastePickerDetails(WastePickerId: number) {
+    return this.http.get<WastePickerDto>(this.baseUrl + 'WastePicker/get-waste-picker/' + WastePickerId);
   }
 }

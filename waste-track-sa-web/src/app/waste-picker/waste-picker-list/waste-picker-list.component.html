@@ -16,7 +16,7 @@
             [pagination]="true"
             [paginationPageSize]="20"
             (gridReady)="onGridReady($event)"
-            
+            (cellClicked)="onCellClicked($event)"
             [suppressClickEdit]="true"
             >
         </ag-grid-angular>

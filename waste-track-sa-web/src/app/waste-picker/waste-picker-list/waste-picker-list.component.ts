@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WastePickerDto } from 'src/app/shared/models/wastePicker';
 import { WastePickerService } from '../waste-picker.service';
+import { Router } from '@angular/router';
 
 function actionCellRender(params: any) {
   let eGui = document.createElement("div");
@@ -40,7 +41,7 @@ export class WastePickerListComponent implements OnInit {
   wastePickers: any | WastePickerDto[] = [];
   
 
-  constructor(private wastePickerService: WastePickerService) {}
+  constructor(private wastePickerService: WastePickerService, private router: Router) {}
 
 
   ngOnInit(): void {
@@ -74,7 +75,7 @@ export class WastePickerListComponent implements OnInit {
     },
     {
       field: 'wastePickerNo',
-      headerName: 'Waste Picker No',
+      headerName: 'Waste-Picker-No',
       sortable: true,
       filter: true,
       floatingFilter: true,
@@ -88,7 +89,7 @@ export class WastePickerListComponent implements OnInit {
       filter: true,
       floatingFilter: true,
       resizable: true,
-      flex: 3,
+      flex: 4,
     },
     {
       field: 'lastName',
@@ -97,7 +98,7 @@ export class WastePickerListComponent implements OnInit {
       filter: true,
       floatingFilter: true,
       resizable: true,
-      flex: 3,
+      flex: 4,
     },
     {
       field: 'gender',
@@ -108,15 +109,7 @@ export class WastePickerListComponent implements OnInit {
       resizable: true,
       flex: 3,
     },
-    {
-      field: 'dob',
-      headerName: 'DOB',
-      sortable: true,
-      filter: true,
-      floatingFilter: true,
-      resizable: true,
-      flex: 3,
-    },
+  
     {
       field: 'cellphoneNo',
       headerName: 'Cellphone No',
@@ -126,15 +119,7 @@ export class WastePickerListComponent implements OnInit {
       resizable: true,
       flex: 3,
     },    
-    {
-      field: 'registrationLocation',
-      headerName: 'Registration Location',
-      sortable: true,
-      filter: true,
-      floatingFilter: true,
-      resizable: true,
-      flex: 3,
-    },
+
     {
       field: 'wastePickerStatus',
       headerName: 'Status',
@@ -160,6 +145,49 @@ export class WastePickerListComponent implements OnInit {
       width: 100
     }
   ]
+
+  onCellClicked(params: any) {
+    if (params.column.colId === 'action' && params.event.target.dataset.action) {
+      let action = params.event.target.dataset.action;
+      const editModel: WastePickerDto = {
+        id: params.data.id,
+        firstName: params.data.firstName,
+        lastName: params.data.lastName,
+        dob: params.data.dob,
+        identityNumber: params.data.identityNumber,
+        otherIdentityNumber: params.data.otherIdentityNumber,
+        age: params.data.age,
+        cellphoneNo: params.data.cellphoneNo,
+        altCellphoneNo: params.data.altCellphoneNo,
+        potrait: params.data.potrait,
+        documentType: params.data.documentType,
+        wastePickerNo: params.data.wastePickerNo,
+        comment: params.data.comment,
+        consent: params.data.consent,
+        createdBy: params.data.createdBy,
+        createdDate: params.data.createdDate,
+        lastUpdatedBy: params.data.lastUpdatedBy,
+        lastUpdatedDate: params.data.lastUpdatedDate,
+        registrationLocation: params.data.registrationLocation,
+        gender: params.data.gender,
+        race: params.data.race,
+        isMemberCooperative: params.data.isMemberCooperative,
+        cooperative: params.data.cooperative,
+        activityStatusId: params.data.activityStatusId,
+        lastActivityDate: params.data.lastActivityDate,
+        printCount: params.data.printCount,
+        manualPrintCount: params.data.manualPrintCount,
+        autoPrintCount: params.data.autoPrintCount,
+        wastePickerStatus: params.data.wastePickerStatus
+
+      };
+
+      if (action === 'view') {
+        this.router.navigate(['waste-picker/id'], { queryParams: { id: params.data.id } });
+      }
+    }
+  }
+
 
   onGridReady(params: any) {
     this.gridApi = params.api;

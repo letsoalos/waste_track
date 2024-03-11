@@ -4,7 +4,7 @@ namespace waste_track_sa_core.Specifications
 {
     public class WastePickersWithLookUpDataSpecification : BaseSpecification<WastePicker>
     {
-             public WastePickersWithLookUpDataSpecification(int id) : base(x => x.Id == id)
+        public WastePickersWithLookUpDataSpecification(int id) : base(x => x.Id == id)
         {
             AddInclude(x => x.Gender);
             AddInclude(x => x.Race);

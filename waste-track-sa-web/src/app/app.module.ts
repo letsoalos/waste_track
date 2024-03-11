@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { WastePickerModule } from './waste-picker/waste-picker.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { WastePickerModule } from './waste-picker/waste-picker.module';
     HttpClientModule,
     CoreModule,
     WastePickerModule,
-    
+    HomeModule,
+    WastePickerModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
