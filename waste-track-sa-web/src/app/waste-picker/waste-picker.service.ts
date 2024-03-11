@@ -17,4 +17,8 @@ export class WastePickerService {
   getWastePickerDetails(WastePickerId: number) {
     return this.http.get<WastePickerDto>(this.baseUrl + 'WastePicker/get-waste-picker/' + WastePickerId);
   }
+
+  updateWastePicker(data: WastePickerDto) {
+    
+  }
 }

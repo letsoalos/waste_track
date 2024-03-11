@@ -6,6 +6,7 @@ import { AddWastePickerComponent } from './add-waste-picker/add-waste-picker.com
 import { WastePickerDetailsComponent } from './waste-picker-details/waste-picker-details.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { ModalModule } from 'ngx-bootstrap/modal'
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -19,6 +20,7 @@ import { ModalModule } from 'ngx-bootstrap/modal'
   imports: [
     CommonModule,
     AgGridModule,
+    ReactiveFormsModule,
     ModalModule.forRoot()
   ],
   exports: [

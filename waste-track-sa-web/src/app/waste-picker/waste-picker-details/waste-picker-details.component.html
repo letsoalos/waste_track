@@ -8,7 +8,6 @@
           </div>
           <div class="card-body">
             <div class="row">
-              <!-- Each data field is wrapped in a col-4 for better alignment -->
               <div class="col-md-4 mb-3">
                 <p class="mb-1"><span class="fw-bold">First Name</span>: {{wastePicker.firstName}}</p>
               </div>
@@ -20,7 +19,6 @@
               </div>
             </div>
             <div class="row">
-              <!-- Each data field is wrapped in a col-4 for better alignment -->
               <div class="col-md-4 mb-3">
                 <p class="mb-1"><span class="fw-bold">Identity Number</span>: {{wastePicker.identityNumber}}</p>
               </div>
@@ -32,7 +30,6 @@
               </div>
             </div>
             <div class="row">
-              <!-- Each data field is wrapped in a col-4 for better alignment -->
               <div class="col-md-4 mb-3">
                 <p class="mb-1"><span class="fw-bold">Gender</span>: {{wastePicker.gender}}</p>
               </div>
@@ -44,9 +41,8 @@
               </div>
             </div>
             <div class="row">
-              <!-- Each data field is wrapped in a col-4 for better alignment -->
               <div class="col-md-4 mb-3">
-                <p class="mb-1"><span class="fw-bold">Registration Location</span>: {{wastePicker.gender}}</p>
+                <p class="mb-1"><span class="fw-bold">Registration Location</span>: {{wastePicker.registrationLocation}}</p>
               </div>
               <div class="col-md-4 mb-3">
                 <p class="mb-1"><span class="fw-bold">Cooperative</span>: {{wastePicker.cooperative}}</p>
@@ -56,7 +52,6 @@
               </div>
             </div>
             <div class="row">
-              <!-- Each data field is wrapped in a col-4 for better alignment -->
               <div class="col-md-4 mb-3">
                 <p class="mb-1"><span class="fw-bold">WastePicker Number</span>: {{wastePicker.wastePickerNo}}</p>
               </div>
@@ -68,7 +63,6 @@
               </div>
             </div>
             <div class="row">
-              <!-- Each data field is wrapped in a col-4 for better alignment -->
               <div class="col-md-4 mb-3">
                 <p class="mb-1"><span class="fw-bold">Cellphone Number</span>: {{wastePicker.cellphoneNo}}</p>
               </div>
@@ -80,9 +74,14 @@
               </div>
             </div>
 
-            <div class="row">
-              <div class="col-12 mt-3">
-                <button class="btn btn-outline-primary float-end">Edit</button>
+            <div class="row mt-3">
+              <div class="col-6">
+                <button class="btn btn-primary form-control" (click)="updateWastePicker('update', wastePicker)">Edit</button>
+              </div>
+              <div class="col-6">
+                <a routerLink="/waste-picker" class="btn btn-outline-secondary border form-control">
+                  Back to List
+                </a>
               </div>
             </div>
           </div>
