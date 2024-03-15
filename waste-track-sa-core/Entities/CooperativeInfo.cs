@@ -4,16 +4,16 @@ namespace waste_track_sa_core.Entities
     {
         public int WastePickerId { get; set; }
         public int CooperativeId { get; set; }
-        public DateTime WastePickerStartDate { get; set; }
+        public string WastePickerStartDate { get; set; }
         public int WorksiteId { get; set; }                 //LastWastePickerSite
         public int Consent { get; set; }
-        public DateTime YearJoined { get; set; }
+        public string YearJoined { get; set; }
         public string Comment { get; set; }
-        public bool IActive { get; set; }
+        public bool IsActive { get; set; }
         public string CreatedBy { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public string CreatedDate { get; set; } = DateTime.Now.ToString("YYYY-MM-DD");
         public string LastUpdatedBy { get; set; }
-        public DateTime LastUpdatedDate { get; set; }
+        public string LastUpdatedDate { get; set; }
 
         public WastePicker WastePicker { get; set; }
         public Cooperative Cooperative { get; set; }

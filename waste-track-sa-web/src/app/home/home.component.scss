@@ -1,0 +1,11 @@
+.row {
+    display: flex;
+  }
+  
+  .side-panel {
+    flex: 1; /* Grow to fill available space */
+    background-color: hsl(0, 68%, 51%); /* Set your desired background color */
+    padding: 20px; /* Add some padding to the side panel */
+  }
+  
+  

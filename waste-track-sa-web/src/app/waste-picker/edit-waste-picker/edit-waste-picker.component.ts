@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { WastePickerService } from '../waste-picker.service';
 import { BsModalRef } from 'ngx-bootstrap/modal';
+import { WastePickerDto } from 'src/app/shared/models/wastePicker';
 
 @Component({
   selector: 'app-edit-waste-picker',
@@ -12,6 +13,7 @@ export class EditWastePickerComponent implements OnInit {
   form: FormGroup | any
   model: any;
   userAction?: string;
+  wastePickers: WastePickerDto[] = []
 
   @Output() updateModel = new EventEmitter<any>();
 
@@ -37,6 +39,9 @@ export class EditWastePickerComponent implements OnInit {
       registrationLocation: this.model.registrationLocation,
       gender: this.model.gender,
       race: this.model.race,
+      cooperative: this.model.cooperative,
+      isMemberCooperative: this.model.isMemberCooperative,
+      wastePickerStatus: this.model.wastePickerStatus,
       });
       this.getForm();
     }
@@ -57,6 +62,9 @@ export class EditWastePickerComponent implements OnInit {
       registrationLocation: this.model.registrationLocation,
       gender: this.model.gender,
       race: this.model.race,
+      cooperative: this.model.cooperative,
+      isMemberCooperative: this.model.isMemberCooperative,
+      wastePickerStatus: this.model.wastePickerStatus,
     });
   }
 

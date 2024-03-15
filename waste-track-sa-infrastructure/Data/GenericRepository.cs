@@ -69,6 +69,10 @@ namespace waste_track_sa_infrastructure.Data
             return SpecificationEvaluator<T>.GetQuery(dbSet.AsQueryable(), spec);
         }
 
-     
+        public void UpdateAsync(T entity)
+        {
+            dbSet.Attach(entity);
+            dbSet.Entry(entity).State = EntityState.Modified;
+        }
     }
 }

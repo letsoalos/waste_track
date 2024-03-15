@@ -16,8 +16,8 @@ namespace waste_track_sa_infrastructure.Data.Config
                    .WithMany()
                    .HasForeignKey(c => c.CooperativeId).OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(w => w.Worksite)
-                   .WithOne()
-                   .HasForeignKey<CooperativeInfo>(c => c.WorksiteId).OnDelete(DeleteBehavior.NoAction);
+                   .WithMany()
+                   .HasForeignKey(c => c.WorksiteId).OnDelete(DeleteBehavior.NoAction);
             builder.Property(c => c.YearJoined).IsRequired();
 
         }

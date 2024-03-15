@@ -1,16 +1,60 @@
 <header class="d-flex flex-row align-items-center justify-content-between p-3 px-4 mb-3 bg-white border-bottom fix-top shadow-sm">
-    <a class="navbar-brand logo">WASTE-<span class="track" routerLink="/">TRACK</span></a>        
-      <nav class="my-2">
-        <a class="p-2" routerLink="/" 
-                       routerLinkActive="active"
-                       [routerLinkActiveOptions]="{exact: true}"
-                       >Home</a>
-        <a class="p-2" routerLink="/waste-picker" routerLinkActive="active">Eco-Collectors</a>
-        <a class="p-2" routerLink="/config" routerLinkActive="active">Config</a>
-        <a class="p-2" routerLink="/report" routerLinkActive="active">Reports</a>
-      </nav>
-   <div class="d-flex align-items-center">
+  <a class="navbar-brand logo" href="#">
+    WASTE<i class="fa fa-recycle" aria-hidden="true"></i> <span class="track" routerLink="/">TRACK</span>
+  </a>        
+  <nav class="my-2 home-link">
+    <a class="p-2" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <div class="btn-group" dropdown>
+      <button id="dropdown-basic1" dropdownToggle type="button" class="btn  dropdown-toggle" aria-controls="dropdown-basic1">
+        Register
+      </button>
+      <ul *dropdownMenu class="dropdown-menu" aria-labelledby="dropdown-basic1">
+        <li>
+          <a class="dropdown-item" routerLink="/report" routerLinkActive="active"><i class="fa fa-user-plus"></i> Registrar</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/report" routerLinkActive="active"><i class="fa fa-check"></i> Verifier</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/report" routerLinkActive="active"><i class="fa fa-credit-card"></i> Card Issuer</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/waste-picker" routerLinkActive="active"><i class="fa fa-recycle"></i> Waste Picker</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/report" routerLinkActive="active"> <i class="fa fa-cog"></i> User Administrator</a>
+        </li>
+      </ul>
+    </div>
+    <div class="btn-group" dropdown>
+      <button id="dropdown-basic2" dropdownToggle type="button" class="btn  dropdown-toggle" aria-controls="dropdown-basic2">
+        Config
+      </button>
+      <ul *dropdownMenu class="dropdown-menu" aria-labelledby="dropdown-basic2">
+        <li>
+          <a class="dropdown-item" routerLink="/report" routerLinkActive="active"><i class="fa fa-user"></i> User</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/report2" routerLinkActive="active"><i class="fa fa-building"> </i> Municipality</a>
+        </li>
+      </ul>
+    </div>
+    <div class="btn-group" dropdown>
+      <button id="dropdown-basic3" dropdownToggle type="button" class="btn  dropdown-toggle" aria-controls="dropdown-basic3">
+        Reports
+      </button>
+      <ul *dropdownMenu class="dropdown-menu" aria-labelledby="dropdown-basic3">
+        <li>
+          <a class="dropdown-item" routerLink="/report" routerLinkActive="active">Report 1</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/report2" routerLinkActive="active">Report 2</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="d-flex align-items-center">
     <a href="" class="btn btn-outline-secondary me-2">Login</a>
-    <a href="" class="btn btn-outline-primary me-3">Register</a>
-   </div>
-  </header>
+    <a href="" class="btn btn-outline-success me-3">Register</a>
+  </div>
+</header>

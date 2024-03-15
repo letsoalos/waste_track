@@ -162,6 +162,15 @@ namespace waste_track_sa_infrastructure.Data
 #pragma warning restore CS8604 // Possible null reference argument. wastePickers.json
             }
 
+            if (!context.CooperativeInfo.Any())
+            {
+                var CooInfoData = File.ReadAllText("../waste-track-sa-infrastructure/Data/SeedData/cooperativeInfo.json");
+                var CoopInfo = JsonSerializer.Deserialize<List<CooperativeInfo>>(CooInfoData);
+#pragma warning disable CS8604 // Possible null reference argument.
+                context.CooperativeInfo.AddRange(CoopInfo);
+#pragma warning restore CS8604 // Possible null reference argument. wastePickers.json
+            }
+
 
             //if (!context.ReclaimingInfo.Any())
            // {

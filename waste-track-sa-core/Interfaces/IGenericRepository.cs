@@ -12,6 +12,7 @@ namespace waste_track_sa_core.Interfaces
         Task<T> Get(Expression<Func<T, bool>> filter);
         Task<int> CountAsync(ISpecification<T> spec);
         void Add(T entity);
+        void UpdateAsync(T entity);
         void Remove(T entity);
         void RomoveRange(IEnumerable<T> entity);
     }

@@ -19,7 +19,7 @@ namespace waste_track_sa_core.Entities
         public int Consent { get; set; }
         public string CreatedBy { get; set; }
         //public DateTime CreatedDate { get; set; }
-        public string CreatedDate { get; set; } = DateTime.Now.ToString();
+        public string CreatedDate { get; set; }
         public string LastUpdatedBy { get; set; }
         public string LastUpdatedDate { get; set; }
         public string RegistrationLocation { get; set; }
@@ -40,5 +40,6 @@ namespace waste_track_sa_core.Entities
         public Gender Gender { get; set; }    
         public Race Race { get; set; }
         public Cooperative Cooperative { get; set; }
+   
     }
 }

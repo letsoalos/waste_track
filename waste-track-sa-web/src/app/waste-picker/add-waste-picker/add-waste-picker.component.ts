@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-waste-picker',
@@ -6,5 +7,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-waste-picker.component.scss']
 })
 export class AddWastePickerComponent {
+  
+  constructor(private fb: FormBuilder) {}
 
+  addWastePickerForm = this.fb.group({
+    personalDetailsForm: this.fb.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      identityNumber: ['', Validators.nullValidator],
+      otherIdentityNumber: ['', Validators.nullValidator],
+      dob: ['', Validators.required],
+      age: ['', Validators.required],
+      gender: ['', Validators.required],
+      race: ['', Validators.required],
+      documentType: ['', Validators.required],
+      cellphoneNo: ['', Validators.nullValidator],
+      altCellphoneNo: ['', Validators.nullValidator],
+  }),
+    contactDetailsForm: this.fb.group({      
+      registrationLocation: ['', Validators.required]
+    })
+  });
 }

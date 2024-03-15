@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { WastePickerDto } from '../shared/models/wastePicker';
+import { DocumentTypeDto, GenderDto, RaceDto, WastePickerDto } from '../shared/models/wastePicker';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,40 @@ export class WastePickerService {
     return this.http.get<WastePickerDto>(this.baseUrl + 'WastePicker/get-waste-picker/' + WastePickerId);
   }
 
-  updateWastePicker(data: WastePickerDto) {
-    
+  addWastePicker(data: WastePickerDto)  {
+    return this.http.post<WastePickerDto>(this.baseUrl + 'WastePicker/add-waste-picker', data, {
+      withCredentials: true,
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+    }).pipe(map<any, any>((data) => {
+      return data;
+    })
+    );
   }
+
+  updateWastePicker(data: WastePickerDto)  {
+    return this.http.post<WastePickerDto>(this.baseUrl + 'WastePicker/update-waste-picker', data, {
+      withCredentials: true,
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+    }).pipe(map<any, any>((data) => {
+      return data;
+    })
+    );
+  }
+
+  getGender() {
+    return this.http.get<GenderDto>(this.baseUrl + 'Gender/get-gender');
+  }
+
+  getetRace() {
+    return this.http.get<RaceDto>(this.baseUrl + 'Race/get-race');
+  }
+
+  getDocumentType() {
+    return this.http.get<DocumentTypeDto>(this.baseUrl + 'DocumentType/get-document-type' );
+  }
+
 }

@@ -12,7 +12,7 @@ using waste_track_sa_infrastructure.Data;
 namespace waste_track_sa_infrastructure.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240309172539_InitialCreate")]
+    [Migration("20240312104955_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -172,28 +172,29 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<string>("CreatedDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("IActive")
+                    b.Property<bool>("IsActive")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("LastUpdatedBy")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("LastUpdatedDate")
+                    b.Property<string>("LastUpdatedDate")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("WastePickerId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("WastePickerStartDate")
+                    b.Property<string>("WastePickerStartDate")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("WorksiteId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("YearJoined")
+                    b.Property<string>("YearJoined")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -203,8 +204,7 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                     b.HasIndex("WastePickerId")
                         .IsUnique();
 
-                    b.HasIndex("WorksiteId")
-                        .IsUnique();
+                    b.HasIndex("WorksiteId");
 
                     b.ToTable("CooperativeInfo");
                 });
@@ -1251,8 +1251,8 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("waste_track_sa_core.Entities.Worksite", "Worksite")
-                        .WithOne()
-                        .HasForeignKey("waste_track_sa_core.Entities.CooperativeInfo", "WorksiteId")
+                        .WithMany()
+                        .HasForeignKey("WorksiteId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 

@@ -635,16 +635,16 @@ namespace waste_track_sa_infrastructure.Data.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     WastePickerId = table.Column<int>(type: "INTEGER", nullable: false),
                     CooperativeId = table.Column<int>(type: "INTEGER", nullable: false),
-                    WastePickerStartDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    WastePickerStartDate = table.Column<string>(type: "TEXT", nullable: true),
                     WorksiteId = table.Column<int>(type: "INTEGER", nullable: false),
                     Consent = table.Column<int>(type: "INTEGER", nullable: false),
-                    YearJoined = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    YearJoined = table.Column<string>(type: "TEXT", nullable: false),
                     Comment = table.Column<string>(type: "TEXT", nullable: true),
-                    IActive = table.Column<bool>(type: "INTEGER", nullable: false),
+                    IsActive = table.Column<bool>(type: "INTEGER", nullable: false),
                     CreatedBy = table.Column<string>(type: "TEXT", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    CreatedDate = table.Column<string>(type: "TEXT", nullable: true),
                     LastUpdatedBy = table.Column<string>(type: "TEXT", nullable: true),
-                    LastUpdatedDate = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    LastUpdatedDate = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -872,8 +872,7 @@ namespace waste_track_sa_infrastructure.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_CooperativeInfo_WorksiteId",
                 table: "CooperativeInfo",
-                column: "WorksiteId",
-                unique: true);
+                column: "WorksiteId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Districts_ProviceId",
