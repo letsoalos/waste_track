@@ -4,7 +4,7 @@
         <div class="col-10">
            <app-stepper [linearModeSelected]="false" #appStepper>
             <cdk-step label="Consent">
-                Step 1
+              <app-consent-docs></app-consent-docs>
             </cdk-step>
             <cdk-step label="Personal Details">
                <app-personal-details [addWastePickerForm]="addWastePickerForm"></app-personal-details>

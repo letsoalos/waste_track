@@ -9,9 +9,10 @@ import { ModalModule } from 'ngx-bootstrap/modal'
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
-import { ContactDetailsComponent } from './add-waste-picker/contact-details/contact-details.component';
 import { PersonalDetailsComponent } from './add-waste-picker/personal-details/personal-details.component';
 import { TextInputComponent } from '../shared/components/text-input/text-input.component';
+import { ConsentDocsComponent } from './add-waste-picker/consent-docs/consent-docs.component';
+import { NgxExtendedPdfViewerServerModule } from 'ngx-extended-pdf-viewer';
 
 
 
@@ -21,9 +22,9 @@ import { TextInputComponent } from '../shared/components/text-input/text-input.c
     EditWastePickerComponent,
     AddWastePickerComponent,
     WastePickerDetailsComponent,
-    ContactDetailsComponent,
     PersonalDetailsComponent,
-    TextInputComponent
+    TextInputComponent,
+    ConsentDocsComponent
   ],
   imports: [
     CommonModule,
@@ -31,6 +32,7 @@ import { TextInputComponent } from '../shared/components/text-input/text-input.c
     ReactiveFormsModule,
     RouterModule,
     SharedModule,
+    NgxExtendedPdfViewerServerModule,
     ModalModule.forRoot()
   ],
   exports: [

@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { WastePickerModule } from './waste-picker/waste-picker.module';
 import { HomeModule } from './home/home.module';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HomeModule } from './home/home.module';
     CoreModule,
     WastePickerModule,
     HomeModule,
-    WastePickerModule    
+    WastePickerModule,
+    NgxExtendedPdfViewerModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

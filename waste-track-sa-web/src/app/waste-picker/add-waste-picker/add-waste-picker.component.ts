@@ -23,9 +23,7 @@ export class AddWastePickerComponent {
       documentType: ['', Validators.required],
       cellphoneNo: ['', Validators.nullValidator],
       altCellphoneNo: ['', Validators.nullValidator],
-  }),
-    contactDetailsForm: this.fb.group({      
-      registrationLocation: ['', Validators.required]
-    })
+  })
+  
   });
 }
