@@ -23,7 +23,7 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     WastePickerModule,
     HomeModule,
     WastePickerModule,
-    NgxExtendedPdfViewerModule    
+    NgxExtendedPdfViewerModule,    
   ],
   providers: [],
   bootstrap: [AppComponent]

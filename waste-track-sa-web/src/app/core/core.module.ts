@@ -4,13 +4,17 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { MainWindowComponent } from './main-window/main-window.component';
 
 
 
 @NgModule({
   declarations: [
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarComponent,
+    MainWindowComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +23,9 @@ import { SharedModule } from '../shared/shared.module';
   ],
   exports: [
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarComponent,
+    MainWindowComponent
   ]
 })
 export class CoreModule { }

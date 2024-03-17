@@ -13,6 +13,8 @@ import { PersonalDetailsComponent } from './add-waste-picker/personal-details/pe
 import { TextInputComponent } from '../shared/components/text-input/text-input.component';
 import { ConsentDocsComponent } from './add-waste-picker/consent-docs/consent-docs.component';
 import { NgxExtendedPdfViewerServerModule } from 'ngx-extended-pdf-viewer';
+import { CollectionInfoComponent } from './add-waste-picker/collection-info/collection-info.component';
+import { SupportingDocsComponent } from './add-waste-picker/supporting-docs/supporting-docs.component';
 
 
 
@@ -24,7 +26,9 @@ import { NgxExtendedPdfViewerServerModule } from 'ngx-extended-pdf-viewer';
     WastePickerDetailsComponent,
     PersonalDetailsComponent,
     TextInputComponent,
-    ConsentDocsComponent
+    ConsentDocsComponent,
+    CollectionInfoComponent,
+    SupportingDocsComponent
   ],
   imports: [
     CommonModule,
