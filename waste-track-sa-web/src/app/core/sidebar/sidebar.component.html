@@ -1,9 +1,6 @@
-<!-- sidebar.component.html -->
-<div class="left-panel">
-    <div class="collapse show" id="sidebar">
-      <div class="list-group">
-        
-      </div>
-    </div>
+<div class="col-md-3 left-panel">
+  <div *ngIf="selectedOption === 'registrar'" class="sidebar-content">  
+    <button class="btn">Register Cooperative Members</button>
+    <button class="btn" routerLink="/waste-picker" routerLinkActive="active">Register A Waste Picker</button>
   </div>
-  
+</div>

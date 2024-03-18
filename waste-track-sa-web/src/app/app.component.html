@@ -1,16 +1,14 @@
-
-<app-nav-bar></app-nav-bar>
+<app-nav-bar (optionSelected)="onSelectOption($event)"></app-nav-bar>
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-2">
-      <app-sidebar></app-sidebar>
+    <div class="col-md-3">
+      <app-sidebar [selectedOption]="selectedOption"></app-sidebar>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-9 overflow-auto">
       <app-main-window></app-main-window>
     </div>
   </div>
 </div>
-
 
 <app-footer></app-footer>

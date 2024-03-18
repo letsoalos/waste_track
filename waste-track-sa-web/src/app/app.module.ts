@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
-import { WastePickerModule } from './waste-picker/waste-picker.module';
 import { HomeModule } from './home/home.module';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
@@ -20,9 +19,7 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     BrowserAnimationsModule,
     HttpClientModule,
     CoreModule,
-    WastePickerModule,
     HomeModule,
-    WastePickerModule,
     NgxExtendedPdfViewerModule,    
   ],
   providers: [],

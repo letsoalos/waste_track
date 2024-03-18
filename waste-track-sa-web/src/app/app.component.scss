@@ -1,3 +1,7 @@
 /* styles.scss */
+.element-with-scrollbar {
+  max-height: 400px; /* Set maximum height for the element */
+  overflow-y: auto; /* Add vertical scrollbar when content exceeds maximum height */
+}
 
   
