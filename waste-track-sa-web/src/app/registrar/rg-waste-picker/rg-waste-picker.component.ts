@@ -1,6 +1,6 @@
-/*import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { WastePickerDto } from 'src/app/shared/models/wastePicker';
-import { WastePickerService } from '../waste-picker.service';
+import { RegistrarService } from '../registrar.service';
 import { Router } from '@angular/router';
 
 function actionCellRender(params: any) {
@@ -25,31 +25,27 @@ function actionCellRender(params: any) {
   return eGui;
 }
 
-
 @Component({
-  selector: 'app-waste-picker-list',
-  templateUrl: './waste-picker-list.component.html',
-  styleUrls: ['./waste-picker-list.component.scss']
+  selector: 'app-rg-waste-picker',
+  templateUrl: './rg-waste-picker.component.html',
+  styleUrls: ['./rg-waste-picker.component.scss']
 })
-export class WastePickerListComponent implements OnInit {
-
+export class RgWastePickerComponent implements OnInit{
   userId: number = 1;
   loadingWastePickers: string = "";
   noRow: string = "";
   public rowData: any[] = [];
   public gridApi: WastePickerDto[] = [];
   wastePickers: any | WastePickerDto[] = [];
-  
 
-  constructor(private wastePickerService: WastePickerService, private router: Router) {}
-
+  constructor(private registrarService: RegistrarService, private router: Router) {}
 
   ngOnInit(): void {
-   this.geAlltWastePickers();
+   this.loadWastePickerList();
   }
 
-  geAlltWastePickers() {
-    this.wastePickerService.getWastePickers().subscribe({
+  loadWastePickerList() {
+    this.registrarService.getWastePickers().subscribe({
       next: (res) => {
         this.wastePickers = res;
         this.rowData = this.wastePickers;
@@ -125,13 +121,36 @@ export class WastePickerListComponent implements OnInit {
       headerName: 'Status',
       sortable: true,
       filter: true,
-      // cellRenderer: function(params: any) {
-      //   if(params.value === "true") {
-      //     return '<span class="badge badge-success">Active</span>';
-      //   } else {
-      //     return '<span class="badge badge-danger">Not Active</span>';
-      //   }
-      // },
+      cellRenderer: function(params: any) {
+        console.log('Cell Renderer Params:', params);
+        let badgeClass = '';
+        let statusText = '';
+    
+        if (params.value === "true") {
+            badgeClass = 'badge-success';
+            statusText = 'Active';
+        } else if (params.value.toLowerCase() === "updated") {
+            badgeClass = 'bg-warning';
+            statusText = 'Updated';
+        } else if (params.value.toLowerCase() === "suspended") {
+          badgeClass = 'bg-danger';
+          statusText = 'Suspended';
+        } else if (params.value.toLowerCase() === "registered") {
+          badgeClass = 'bg-info';
+          statusText = 'Registered';
+        }
+          else {
+            badgeClass = 'badge-danger';
+            statusText = 'Not Active';
+        }
+    
+        const badgeElement = document.createElement('span');
+        badgeElement.classList.add('badge', badgeClass);
+        badgeElement.innerText = statusText;
+    
+        return badgeElement;
+    }, 
+    
       floatingFilter: true,
       resizable: true,
       flex: 3,
@@ -192,4 +211,5 @@ export class WastePickerListComponent implements OnInit {
   onGridReady(params: any) {
     this.gridApi = params.api;
   }
-}*/
+
+}

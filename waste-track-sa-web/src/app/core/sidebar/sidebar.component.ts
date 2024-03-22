@@ -1,25 +1,28 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent implements OnChanges{
-   @Input() selectedOption: string | null = null;
-   isCollapsed = true;
+export class SidebarComponent implements OnInit {
+  showWastePickerButton: boolean = false;
+  showCooperateButton: boolean = false;
 
-  ngOnChanges(): void {
-    console.log('Selected option in SidebarComponent:', this.selectedOption);
-  }
- 
+  constructor(private router: Router) { }
 
-  onSelectOption(option: string) {
-    this.selectedOption = option;
-    console.log('Selected option:', this.selectedOption);
-  }
-
-  togglePanel(): void {
-    this.isCollapsed = !this.isCollapsed;
-  }
+  ngOnInit(): void {
+    console.log('SidebarComponent initialized.');
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const currentUrl = this.router.url;
+        console.log('Current URL:', currentUrl);
+        this.showWastePickerButton = currentUrl.startsWith('/registrar');
+        this.showCooperateButton = currentUrl.startsWith('/registrar');
+        console.log('Show Waste Picker Button:', this.showWastePickerButton);
+        console.log('Show Cooperate Button:', this.showCooperateButton);
+      }
+    });
+  }  
 }

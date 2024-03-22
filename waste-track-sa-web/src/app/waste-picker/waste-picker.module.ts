@@ -16,7 +16,7 @@ import { WastePickerRoutingModule } from './waste-picker-routing.module';
   declarations: [
     WastePickerListComponent,
     EditWastePickerComponent,
-    WastePickerDetailsComponent,
+    WastePickerDetailsCompon
      
   ],
   imports: [

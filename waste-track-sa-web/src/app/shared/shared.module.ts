@@ -4,6 +4,7 @@ import { StepperComponent } from './components/stepper/stepper.component';
 import {CdkStepperModule} from '@angular/cdk/stepper';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
@@ -15,12 +16,14 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     CommonModule,
     CdkStepperModule,
     ReactiveFormsModule,
+    MatToolbarModule,
     BsDropdownModule.forRoot()
   ],
   exports: [
     StepperComponent,
     CdkStepperModule,
     ReactiveFormsModule,
+    MatToolbarModule,
     BsDropdownModule
   ]
 })

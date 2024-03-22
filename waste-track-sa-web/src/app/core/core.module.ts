@@ -6,6 +6,9 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainWindowComponent } from './main-window/main-window.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -19,13 +22,16 @@ import { MainWindowComponent } from './main-window/main-window.component';
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule
+    SharedModule   
   ],
   exports: [
     NavBarComponent,
     FooterComponent,
     SidebarComponent,
-    MainWindowComponent
+    MainWindowComponent,
+    MatToolbarModule,
+    MatButtonModule,
+    MatMenuModule
   ]
 })
 export class CoreModule { }

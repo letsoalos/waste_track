@@ -3,7 +3,7 @@
     WASTE<i class="fa fa-recycle" aria-hidden="true"></i> <span class="track" routerLink="/">TRACK</span>
   </a>        
   <nav class="my-2 home-link">
-    <a class="p-2" routerLink="/" routerLinkActive="active" (click)="resetOption()" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a class="p-2" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
     <div class="btn-group" dropdown>
       <!-- navbar.component.html -->
 
@@ -12,7 +12,7 @@
       </button>
       <ul *dropdownMenu class="dropdown-menu" aria-labelledby="dropdown-basic3">
         <li>
-          <a class="dropdown-item" (click)="selectOption('registrar')"><i class="fa fa-user-plus"></i> Registrar</a>
+          <a class="dropdown-item"  routerLink="/registrar"><i class="fa fa-user-plus"></i> Registrar</a>
         </li>
          <li>
           <a class="dropdown-item" (click)="selectOption('verifier')"><i class="fa fa-check"></i> Verifier</a>
@@ -51,3 +51,6 @@
     <a href="" class="btn btn-outline-success me-3">Logout</a>
   </div>
 </header>
+
+
+

@@ -1,6 +1,12 @@
 <div class="col-md-3 left-panel">
-  <div *ngIf="selectedOption === 'registrar'" class="sidebar-content">  
-    <button class="btn">Register Cooperative Members</button>
-    <button class="btn" routerLink="/waste-picker" routerLinkActive="active">Register A Waste Picker</button>
+  <div class="sidebar-content">  
+    <button *ngIf="showWastePickerButton" class="btn" 
+            routerLink="/registrar/waste-picker"
+            routerLinkActive="active"
+            ><i class="fa fa-recycle"></i> Waste Picker</button> 
+    <button *ngIf="showCooperateButton" class="btn" 
+            routerLinkActive="active"
+            routerLink="/registrar/cooperate"
+            ><i class="fa fa-building-o" aria-hidden="true"></i> Cooperate</button>  
   </div>
 </div>

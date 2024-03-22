@@ -1,7 +1,12 @@
-/* main-window.component.css */
-/* main-window.component.scss */
+
 .main-window {
-  height: 100vh; // Set the height of the main window to 100% of the viewport height
-  overflow: hidden; // Hide overflow content
-  padding: 20px; // Optional: Add padding if needed
+  height: 100vh; 
+  overflow: hidden;
+  padding: 10px;
+
+  &.custom-bg {
+    background-color: #Ced4da; 
+  }
 }
+
+

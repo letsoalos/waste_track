@@ -24,7 +24,7 @@
 
   .sidebar-content .btn {
     display: block;
-    margin-bottom: 10px; /* Adjust the value as needed */
+    margin-bottom: 5px !important; /* Adjust the value as needed */
     padding: 10px 12px;
     background-color: #3498db; /* Blue color, you can change it to any color you prefer */
     color: #fff; /* White text color */
@@ -39,8 +39,6 @@
     &:hover {
       background-color: #007bff; /* Darker shade of blue on hover */
     }
-  
-    font-size: 14px;
   }
   
 }

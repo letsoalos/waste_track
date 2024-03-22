@@ -1,7 +1,31 @@
-/* styles.scss */
-.element-with-scrollbar {
-  max-height: 400px; /* Set maximum height for the element */
-  overflow-y: auto; /* Add vertical scrollbar when content exceeds maximum height */
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
 }
 
-  
+.container {
+  display: grid;
+  grid-template-columns: 270px 1fr; /* Sidebar takes up 270px, main content takes up the rest */
+  grid-gap: 20px; /* Gap between sidebar and main content */
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* On smaller screens, make the sidebar full width and stack main content below */
+  }
+}
+
+.sidebar {
+  background-color: #333; /* Dark background color for sidebar */
+  color: #fff; /* Text color for sidebar */
+  padding: 20px; /* Optional padding for sidebar */
+}
+
+.main-content {
+  padding: 20px; /* Padding for main content */
+}
+
+

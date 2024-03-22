@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,17 +6,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
+  @Input() selectedOption: string | null = null;
   @Output() optionSelected = new EventEmitter<string>();
-  @Output() resetSelectedOption = new EventEmitter<void>();
+  @Output() resetMainWindow = new EventEmitter<void>();
 
   selectOption(option: string) {
     this.optionSelected.emit(option);
-    this.resetSelectedOption.emit(); 
+    this.resetMainWindow.emit();
   }
-
-    // Method to trigger resetting the selected option
-    resetOption() {
-      this.resetSelectedOption.emit();
-    }
-
 }

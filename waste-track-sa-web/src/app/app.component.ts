@@ -1,5 +1,5 @@
-import { AfterContentInit, Component, OnInit } from '@angular/core';
-import { MainService } from './main.service';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,29 +7,15 @@ import { MainService } from './main.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'waste-track';
-  selectedOption: string | null = null;
-  isResetting = false;
+  isRegistrarRoute = false;
 
-  constructor(private srv: MainService){
+  constructor(private router: Router) {} 
 
-  }
-  
   ngOnInit(): void {
-    
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.isRegistrarRoute = this.router.url.includes('/registrar');
+      }
+    });    
   }
-
-
-  onSelectOption(option: string) {
-    console.log('Selected option:', option);
-    this.selectedOption = option;
-  }
-
-  resetSelectedOption() {
-    if (!this.isResetting) {
-      console.log('Resetting selected option...');
-      this.selectedOption = null;
-      this.isResetting = true;
-    }
-  }  
 }
