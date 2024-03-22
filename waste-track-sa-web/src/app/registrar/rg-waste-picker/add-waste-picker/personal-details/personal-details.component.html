@@ -1,0 +1,77 @@
+<div class="mt-4" *ngIf="addWastePickerForm" [formGroup]="addWastePickerForm">
+    <div>
+        <h6 class="mb-4">Personal details</h6>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div formGroupName="personalDetailsForm">
+                <div class="form-group">
+                    <app-text-input [label]="'First name'" formControlName="firstName"></app-text-input>
+                </div>
+                <div class="row">
+                <div class="form-group col-8  mb-3">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" class="form-control" formControlName="dob">
+                </div>  
+                <div class="form-group col-4  mb-3">
+                    <label for="age">Age (Auto-calculated)</label>
+                    <input type="text" class="form-control" formControlName="age" readonly>
+                </div>    
+                </div> 
+               <div class="row">
+                <div class="form-group col-6">
+                    <app-text-input [label]="'Cell phone number'" formControlName="cellphoneNo"></app-text-input>
+                </div>
+                <div class="form-group col-6">
+                    <app-text-input [label]="'Alternative phone number'" formControlName="altCellphoneNo"></app-text-input>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div formGroupName="personalDetailsForm">
+                <div class="form-group">
+                    <app-text-input [label]="'Last name'" formControlName="lastName"></app-text-input>
+                </div>
+                <div class="row">                      
+                    <div class="form-group col-6 mb-3">
+                        <label for="gender">Gender</label>
+                        <select class="form-select" formControlName="gender" aria-label="Select gender">
+                            <option value="" disabled selected>Please select gender</option>
+                            <option *ngFor="let gender of genders" [value]="gender.id">{{ gender.name }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-6 mb-3">
+                        <label for="race">Race</label>
+                        <select class="form-select" formControlName="race" aria-label="Select race">
+                            <option value="" disabled selected>Please select race</option>
+                            <option *ngFor="let race of races" [value]="race.id">{{ race.name }}</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-4 mb-3">
+                            <label for="docType">Document Type</label>
+                            <select class="form-select" formControlName="documentType" aria-label="Select Document Type">
+                                <option value="" disabled selected>Please document type</option>
+                                <option *ngFor="let documentType of documentTypes" [value]="documentType.id">{{ documentType.docType }}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-4">
+                            <app-text-input [label]="'Identity Number'" formControlName="identityNumber"></app-text-input>
+                        </div>
+                        <div class="form-group col-4">
+                            <app-text-input [label]="'Other Identity Number'" formControlName="otherIdentityNumber"></app-text-input>
+                        </div>
+                    </div>   
+            </div>
+        </div>
+    </div>
+     <!-- New row for camera component -->
+    <div class="row mt-4">
+        <div class="col">
+            <!-- Camera component goes here -->
+            <p>Camera Component Placeholder</p>
+        </div>
+    </div>
+</div>

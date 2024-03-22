@@ -202,7 +202,7 @@ export class RgWastePickerComponent implements OnInit{
       };
 
       if (action === 'view') {
-        this.router.navigate(['waste-picker/id'], { queryParams: { id: params.data.id } });
+        this.router.navigate(['registrar/waste-picker/', params.data.id]);
       }
     }
   }

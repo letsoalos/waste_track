@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { DocumentTypeDto, GenderDto, RaceDto } from 'src/app/shared/models/wastePicker';
-import { WastePickerService } from '../../waste-picker.service';
+import { RegistrarService } from 'src/app/registrar/registrar.service';
+import { GenderDto, RaceDto, DocumentTypeDto } from 'src/app/shared/models/wastePicker';
 
 @Component({
   selector: 'app-personal-details',
@@ -14,7 +14,7 @@ export class PersonalDetailsComponent implements OnInit {
   races: any | RaceDto[] = [];
   documentTypes: any | DocumentTypeDto[] = [];
 
-  constructor(private wastePickerService: WastePickerService) {}
+  constructor(private registrarService: RegistrarService) {}
   
   ngOnInit(): void {
     this.loadGender();
@@ -23,7 +23,7 @@ export class PersonalDetailsComponent implements OnInit {
   }
 
     loadGender(): void {
-      this.wastePickerService.getGender().subscribe({
+      this.registrarService.getGender().subscribe({
         next: (res) => {
           console.log(res);
           this.genders = res;
@@ -35,7 +35,7 @@ export class PersonalDetailsComponent implements OnInit {
   }
 
   loadRace(): void {
-    this.wastePickerService.getetRace().subscribe({
+    this.registrarService.getetRace().subscribe({
       next: (res) => { 
         console.log(res);
         this.races = res;
@@ -47,7 +47,7 @@ export class PersonalDetailsComponent implements OnInit {
   }
 
   loadDocumentType(): void {
-    this.wastePickerService.getDocumentType().subscribe({
+    this.registrarService.getDocumentType().subscribe({
       next: (res) => { 
         console.log(res);
         this.documentTypes = res;
@@ -58,4 +58,3 @@ export class PersonalDetailsComponent implements OnInit {
     });
   }
 }
-

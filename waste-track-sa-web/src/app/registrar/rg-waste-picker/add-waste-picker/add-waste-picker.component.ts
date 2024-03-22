@@ -7,7 +7,6 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./add-waste-picker.component.scss']
 })
 export class AddWastePickerComponent {
-  
   constructor(private fb: FormBuilder) {}
 
   addWastePickerForm = this.fb.group({
@@ -23,7 +22,6 @@ export class AddWastePickerComponent {
       documentType: ['', Validators.required],
       cellphoneNo: ['', Validators.nullValidator],
       altCellphoneNo: ['', Validators.nullValidator],
-  })
-  
+    })
   });
 }

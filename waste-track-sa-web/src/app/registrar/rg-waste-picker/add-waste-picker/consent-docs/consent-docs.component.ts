@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 declare var PDFViewerApplication: any;
@@ -10,7 +10,8 @@ declare var PDFViewerApplication: any;
 })
 export class ConsentDocsComponent implements AfterViewInit {
   @Input() addWastePickerForm?: FormGroup; 
-  @ViewChild('pdfViewerContainer') pdfViewerContainer: ElementRef | any;
+  @ViewChild('pdfViewerContainer') pdfViewerContainer!: ElementRef | any;
+
   questions: string[] = [
     'Please confirm that you, as the registrar, have explained the consent to the waste picker.',
     'Please confirm that the waste picker understands and has given consent.',
@@ -35,6 +36,7 @@ export class ConsentDocsComponent implements AfterViewInit {
 
      // Check if pdfViewerContainer is available before appending iframe
     if (this.pdfViewerContainer && this.pdfViewerContainer.nativeElement) {
+      console.log('pdfViewerContainer is available:', this.pdfViewerContainer.nativeElement);
       this.pdfViewerContainer.nativeElement.appendChild(iframe);
       // Initialize PDF viewer
       iframe.onload = () => {
@@ -46,4 +48,5 @@ export class ConsentDocsComponent implements AfterViewInit {
       console.error('pdfViewerContainer is not available.');
     }
   }
-  }
+
+}

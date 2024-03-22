@@ -3,18 +3,20 @@
         <div class="col-12">
            <app-stepper [linearModeSelected]="false" #appStepper>
             <cdk-step label="Consent">
-              <app-consent-docs></app-consent-docs>
+            <div #pdfViewerContainer id="pdfViewerContainer"></div>
+            <app-consent-docs></app-consent-docs>
             </cdk-step>
             <cdk-step label="Personal Details">
-              <app-personal-details [addWastePickerForm]="addWastePickerForm"></app-personal-details>
+             <app-personal-details [addWastePickerForm]="addWastePickerForm"></app-personal-details>
             </cdk-step>
             <cdk-step label="Collection Information">
-                Step 4
+                Step 3
             </cdk-step>
             <cdk-step label="Supporting Documents">
-                Step 5
+                Step 4
             </cdk-step>
            </app-stepper>          
         </div>
     </div>
 </div>
+

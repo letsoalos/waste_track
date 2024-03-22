@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { WastePickerService } from '../waste-picker.service';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { WastePickerDto } from 'src/app/shared/models/wastePicker';
 
@@ -18,7 +17,6 @@ export class EditWastePickerComponent implements OnInit {
   @Output() updateModel = new EventEmitter<any>();
 
   constructor(private fb: FormBuilder,
-      private wastePickerService: WastePickerService,
       private bsModelRef: BsModalRef) {}
 
 
@@ -80,3 +78,4 @@ export class EditWastePickerComponent implements OnInit {
   }
 
 }
+
