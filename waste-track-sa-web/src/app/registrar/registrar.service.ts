@@ -3,6 +3,10 @@ import { environment } from '../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DocumentTypeDto, GenderDto, RaceDto, WastePickerDto } from '../shared/models/wastePicker';
 import { map } from 'rxjs';
+import { MunicipalityDto } from '../shared/models/municipality';
+import { WorkSiteDto } from '../shared/models/workSite';
+import { SortingAreaDto } from '../shared/models/sortingArea';
+import { PaymetTypeDto } from '../shared/models/paymentType';
 
 @Injectable({
   providedIn: 'root'
@@ -54,6 +58,22 @@ export class RegistrarService {
 
   getDocumentType() {
     return this.http.get<DocumentTypeDto>(this.baseUrl + 'DocumentType/get-document-type' );
+  }
+
+  getPaymentType() {
+    return this.http.get<PaymetTypeDto>(this.baseUrl + 'IncomeMethod/get-payment-type');
+  }
+
+  getSortingArea() {
+    return this.http.get<SortingAreaDto>(this.baseUrl + 'SortingArea/get-sorting-area');
+  }
+
+  getMunicipality() {
+    return this.http.get<MunicipalityDto>(this.baseUrl + 'Municipality/get-municipalities');
+  }
+
+  getWorkSite() {
+    return this.http.get<WorkSiteDto>(this.baseUrl + 'WorkSite/get-work-site');
   }
 
 }

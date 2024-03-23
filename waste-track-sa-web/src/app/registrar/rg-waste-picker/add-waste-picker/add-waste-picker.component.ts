@@ -22,6 +22,17 @@ export class AddWastePickerComponent {
       documentType: ['', Validators.required],
       cellphoneNo: ['', Validators.nullValidator],
       altCellphoneNo: ['', Validators.nullValidator],
-    })
+    }),
+    collectionDetailsForm : this.fb.group({
+      noOfYears: ['', Validators.required],
+      paymentType: ['', Validators.required],
+      sortingArea: ['', Validators.required],
+      municipality: ['', Validators.required],
+      workSite: ['', Validators.required],
+      district: ['', Validators.nullValidator],
+      province: ['',],
+      address: ['', Validators.nullValidator]
+    }) 
   });
+ 
 }

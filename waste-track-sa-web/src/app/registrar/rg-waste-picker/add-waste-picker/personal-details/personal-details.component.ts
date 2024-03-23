@@ -1,6 +1,7 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { RegistrarService } from 'src/app/registrar/registrar.service';
+import { CameraService } from 'src/app/shared/camera.service';
 import { GenderDto, RaceDto, DocumentTypeDto } from 'src/app/shared/models/wastePicker';
 
 @Component({
@@ -73,8 +74,26 @@ export class PersonalDetailsComponent implements OnInit {
   // Function to switch camera
   switchCamera() {
     this.isCameraOn = !this.isCameraOn;
-    this.startCamera();
-  }
+    if (this.isCameraOn) {
+        // Start the camera if it's switched on
+        this.startCamera();
+    } else {
+        // Stop the camera if it's switched off
+        this.stopCamera();
+    }
+}
+
+stopCamera() {
+  // Logic to stop the camera (e.g., stop video stream)
+  // For example, if you're using HTMLMediaElement for video:
+  const videoElement = document.querySelector('video');
+  const mediaStream = videoElement!.srcObject as MediaStream;
+  const tracks = mediaStream.getTracks();
+  tracks.forEach(track => track.stop());
+  videoElement!.srcObject = null;
+}
+
+
 
   startCamera() {
     const video = this.videoElement.nativeElement;
@@ -105,7 +124,7 @@ export class PersonalDetailsComponent implements OnInit {
     const imageDataUrl = canvas.toDataURL('image/png');
     console.log('Image captured:', imageDataUrl); // Log the captured image data URL
   
-    if (this.capturedImages.length < 4) {
+    if (this.capturedImages.length < 3) {
       this.capturedImages.push(imageDataUrl);
     } else {
       console.log('Maximum limit reached.'); // Log a message if the maximum limit is reached

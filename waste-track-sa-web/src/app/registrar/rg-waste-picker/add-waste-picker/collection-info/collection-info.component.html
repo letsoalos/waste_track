@@ -1,1 +1,70 @@
-<p>collection-info works!</p>
+<div class="mt-4" *ngIf="addWastePickerForm" [formGroup]="addWastePickerForm">
+    <div>
+        <h6 class="mb-4">Collection Information</h6>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div formGroupName="collectionDetailsForm">
+                <div class="row">                      
+                    <div class="form-group form-control-sm  mb-3">
+                        <select class="form-select" formControlName="workSite" aria-label="Select worksite">
+                            <option value="" disabled selected>Please select worksite</option>
+                            <option *ngFor="let worksite of workSites" [value]="worksite.id">{{ worksite.name }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">                      
+                    <div class="form-group form-control-sm  mb-3">
+                        <select class="form-select" formControlName="paymentType" aria-label="Select Payment Type">
+                            <option value="" disabled selected>Please select payment type</option>
+                            <option *ngFor="let paymentType of paymentTypes" [value]="paymentType.id">{{ paymentType.name }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group form-control-sm ">
+                    <app-text-input [label]="'District'" formControlName="district" [readonly]="true"></app-text-input>
+                </div>                
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div formGroupName="collectionDetailsForm">
+                <div class="row">                      
+                    <div class="form-group form-control-sm mb-3">
+                        <select class="form-select" formControlName="municipality" aria-label="Please select municipality">
+                            <option value="" disabled selected>Please select municipality</option>
+                            <option *ngFor="let municipality of municipalities" [value]="municipality.id">{{ municipality.name }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">                      
+                    <div class="form-group form-control-sm  mb-3">
+                        <select class="form-select" formControlName="sortingArea" aria-label="Select Sorting Area">
+                            <option value="" disabled selected>Please select sorting area</option>
+                            <option *ngFor="let sortingArea of sortingAreas" [value]="sortingArea.id">{{ sortingArea.name }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group form-control-sm">
+                    <app-text-input [label]="'province'" formControlName="province" [readonly]="true"></app-text-input>
+                </div>                
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div formGroupName="collectionDetailsForm"> 
+                <div class="form-group form-control-sm row-3">
+                    <app-text-input [label]="'address'" formControlName="address"></app-text-input>
+                </div>                               
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="d-flex justify-content-between flex-row my-3">
+    <button class="btn btn-outline-primary" cdkStepperPrevious>
+      <i class="fa fa-angle-left"></i> Back to personal
+    </button>
+    <button class="btn btn-primary" cdkStepperNext>
+      Go to documents <i class="fa fa-angle-right"></i> 
+    </button>
+  </div>
