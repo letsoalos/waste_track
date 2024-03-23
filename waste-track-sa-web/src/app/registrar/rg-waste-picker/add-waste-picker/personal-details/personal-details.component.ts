@@ -1,7 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { RegistrarService } from 'src/app/registrar/registrar.service';
-import { CameraService } from 'src/app/shared/camera.service';
 import { GenderDto, RaceDto, DocumentTypeDto } from 'src/app/shared/models/wastePicker';
 
 @Component({
@@ -24,16 +23,15 @@ export class PersonalDetailsComponent implements OnInit {
   showRetakeBtn: boolean = false;
   capturedImages: string[] = [];
   rearCamera: boolean = true;
-  cameraEnabled: any;
+  isCameraOn: boolean = false;
 
 
-  constructor(private registrarService: RegistrarService, private cameraService: CameraService) {}
+  constructor(private registrarService: RegistrarService) {}
   
   ngOnInit(): void {
     this.loadGender();
     this.loadRace();
     this.loadDocumentType();
-    this.cameraService.startCamera();
   }
 
     loadGender(): void {
@@ -74,7 +72,7 @@ export class PersonalDetailsComponent implements OnInit {
 
   // Function to switch camera
   switchCamera() {
-    this.rearCamera = !this.rearCamera;
+    this.isCameraOn = !this.isCameraOn;
     this.startCamera();
   }
 
@@ -113,5 +111,11 @@ export class PersonalDetailsComponent implements OnInit {
       console.log('Maximum limit reached.'); // Log a message if the maximum limit is reached
     }
   }
+
+  // Inside your component class
+retakePhoto(index: number): void {
+  this.capturedImages.splice(index, 1);
+}
+
 }
 

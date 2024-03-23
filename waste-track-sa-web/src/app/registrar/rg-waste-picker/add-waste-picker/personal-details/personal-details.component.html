@@ -66,46 +66,44 @@
                     </div>   
             </div>
         </div>
-    </div>
-     
-    <!-- Camera and Album Section -->
-    <div class="row">
-        <div class="col-md-12">
-            <div class="camera-and-album">
-                <!-- Camera Placeholder -->
-                <div class="camera-container">
-                    <div class="camera-frame">
-                        <video #video autoplay></video>
-                        <canvas #canvas style="display: none;"></canvas>
-                    </div>
-                    <!-- Buttons Section -->
-                    <div class="button-container">
-                        <button class="btn btn-primary" (click)="switchCamera()" [disabled]="capturedImages.length > 0">Switch Camera</button>
-                        <button  class="btn btn-success" (click)="takePhoto()" [disabled]="capturedImages.length >= 4">Take Photo</button>
+
+        <!-- Camera and Album Section -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="camera-and-album">
+            <!-- Camera Placeholder -->
+            <div class="camera-container">
+                <div class="camera-frame">
+                    <video #video autoplay></video>
+                    <canvas #canvas style="display: none;"></canvas>
+                </div>
+                <!-- Buttons Section -->
+                <div class="button-container">
+                    <button class="btn btn-primary" (click)="switchCamera()" [disabled]="capturedImages.length > 0">Switch Camera</button>
+                    <button class="btn btn-success" (click)="takePhoto()" [disabled]="!isCameraOn || capturedImages.length >= 4">Take Photo</button>
+                </div>
+            </div>
+            <!-- Album -->
+            <div class="album">
+                <!-- Placeholder for four images -->
+                <div class="row">
+                    <div class="col-md-3" *ngFor="let image of capturedImages; let i = index">
+                        <div class="card mb-3 shadow-sm">
+                            <img *ngIf="image" [src]="image" class="card-img-top" alt="Captured Image">
+                            <div *ngIf="!image" class="placeholder card-img-top">No Image</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Image {{ i + 1 }}</h5>
+                                <!-- Retake Button -->
+                                <button class="btn btn-danger" *ngIf="image" (click)="retakePhoto(i)">Retake</button>
+                                <!-- Add any additional information here -->
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- Album -->
-<div class="album">
-    <!-- Placeholder for four images -->
-   <!-- Album -->
-<div class="album">
-    <div class="row">
-      <div class="col-md-3" *ngFor="let image of capturedImages; let i = index">
-        <div class="card mb-3 shadow-sm">
-          <img *ngIf="image" [src]="image" class="card-img-top" alt="Captured Image">
-          <div *ngIf="!image" class="placeholder card-img-top">No Image</div>
-          <div class="card-body">
-            <h5 class="card-title">Image {{ i + 1 }}</h5>
-            <!-- Add any additional information here -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-</div>
-
             </div>
         </div>
     </div>
 </div>
+    </div>
+</div>
+      
