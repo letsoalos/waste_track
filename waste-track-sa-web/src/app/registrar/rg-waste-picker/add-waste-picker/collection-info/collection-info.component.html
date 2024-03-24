@@ -1,70 +1,90 @@
 <div class="mt-4" *ngIf="addWastePickerForm" [formGroup]="addWastePickerForm">
     <div>
-        <h6 class="mb-4">Collection Information</h6>
+        <h4 class="mb-4">Collection section</h4>
     </div>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div formGroupName="collectionDetailsForm">
-                <div class="row">                      
-                    <div class="form-group form-control-sm  mb-3">
-                        <select class="form-select" formControlName="workSite" aria-label="Select worksite">
-                            <option value="" disabled selected>Please select worksite</option>
-                            <option *ngFor="let worksite of workSites" [value]="worksite.id">{{ worksite.name }}</option>
-                        </select>
+                <div class="row">                    
+                        <div class="form-group">
+                            <mat-form-field appearance="fill" class="w-100">
+                                <mat-label>Worksite</mat-label>
+                                <mat-select formControlName="workSite" aria-label="Select worksite">
+                                    <mat-option disabled selected>Please select worksite</mat-option>
+                                    <mat-option *ngFor="let worksite of workSites" [value]="worksite.id">{{ worksite.name }}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div> 
+                        <div class="form-group">
+                            <mat-form-field appearance="fill" class="w-100">
+                                <mat-label>Payment Type</mat-label>
+                                <mat-select formControlName="paymentType" aria-label="Select Payment Type">
+                                    <mat-option disabled selected>Please select payment type</mat-option>
+                                    <mat-option *ngFor="let paymentType of paymentTypes" [value]="paymentType.id">{{ paymentType.name }}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                   </div>                
+                    <div class="form-group">
+                        <mat-form-field appearance="fill" class="w-100">
+                            <mat-label>Sorting Area</mat-label>
+                            <mat-select formControlName="sortingArea" aria-label="Select Sorting Area">
+                                <mat-option disabled selected>Please select sorting area</mat-option>
+                                <mat-option *ngFor="let sortingArea of sortingAreas" [value]="sortingArea.id">{{ sortingArea.name }}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
                     </div>
+            </div>
+        </div> 
+        <div class="col-md-6">
+        <div formGroupName="collectionDetailsForm">
+            <div class="row">
+                <div class="form-group">
+                    <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Municipality</mat-label>
+                        <mat-select formControlName="municipality" aria-label="Please select municipality">
+                            <mat-option disabled selected>Please select municipality</mat-option>
+                            <mat-option *ngFor="let municipality of municipalities" [value]="municipality.id">{{ municipality.name }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
                 </div>
-                <div class="row">                      
-                    <div class="form-group form-control-sm  mb-3">
-                        <select class="form-select" formControlName="paymentType" aria-label="Select Payment Type">
-                            <option value="" disabled selected>Please select payment type</option>
-                            <option *ngFor="let paymentType of paymentTypes" [value]="paymentType.id">{{ paymentType.name }}</option>
-                        </select>
-                    </div>
+                <div class="form-group">
+                    <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>District</mat-label>
+                            <input matInput formControlName="district" readonly>
+                        </mat-form-field>                        
                 </div>
-                <div class="form-group form-control-sm ">
-                    <app-text-input [label]="'District'" formControlName="district" [readonly]="true"></app-text-input>
-                </div>                
+                <div class="form-group">
+                    <mat-form-field appearance="fill" class="w-100">
+                            <mat-label>Province</mat-label>
+                            <input matInput formControlName="province" readonly>
+                    </mat-form-field>
+                </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div formGroupName="collectionDetailsForm">
-                <div class="row">                      
-                    <div class="form-group form-control-sm mb-3">
-                        <select class="form-select" formControlName="municipality" aria-label="Please select municipality">
-                            <option value="" disabled selected>Please select municipality</option>
-                            <option *ngFor="let municipality of municipalities" [value]="municipality.id">{{ municipality.name }}</option>
-                        </select>
+        </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <mat-form-field appearance="fill" class="w-100">
+                                <mat-label>Address</mat-label>
+                                <textarea matInput formControlName="address" rows="3"></textarea>
+                            </mat-form-field>
+                        </div>
                     </div>
                 </div>
-                <div class="row">                      
-                    <div class="form-group form-control-sm  mb-3">
-                        <select class="form-select" formControlName="sortingArea" aria-label="Select Sorting Area">
-                            <option value="" disabled selected>Please select sorting area</option>
-                            <option *ngFor="let sortingArea of sortingAreas" [value]="sortingArea.id">{{ sortingArea.name }}</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group form-control-sm">
-                    <app-text-input [label]="'province'" formControlName="province" [readonly]="true"></app-text-input>
-                </div>                
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div formGroupName="collectionDetailsForm"> 
-                <div class="form-group form-control-sm row-3">
-                    <app-text-input [label]="'address'" formControlName="address"></app-text-input>
-                </div>                               
-            </div>
-        </div>
     </div>
 </div>
+            
+        
 
 
 <div class="d-flex justify-content-between flex-row my-3">
-    <button class="btn btn-outline-primary" cdkStepperPrevious>
-      <i class="fa fa-angle-left"></i> Back to personal
+    <button mat-raised-button color="accent" cdkStepperPrevious>
+        <mat-icon>keyboard_arrow_left</mat-icon> Back to personal
     </button>
-    <button class="btn btn-primary" cdkStepperNext>
-      Go to documents <i class="fa fa-angle-right"></i> 
+    <button mat-raised-button color="primary" cdkStepperNext>
+        Go to documents <mat-icon>keyboard_arrow_right</mat-icon>
     </button>
-  </div>
+</div>

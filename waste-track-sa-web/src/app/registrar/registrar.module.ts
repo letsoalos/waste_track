@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { RegistrarRoutingModule } from './registrar-routing.module';
 import { RgWastePickerComponent } from './rg-waste-picker/rg-waste-picker.component';
 import { RgCooperateComponent } from './rg-cooperate/rg-cooperate.component';
@@ -17,6 +16,15 @@ import { PersonalDetailsComponent } from './rg-waste-picker/add-waste-picker/per
 import { TextInputComponent } from '../shared/components/text-input/text-input.component';
 import { CollectionInfoComponent } from './rg-waste-picker/add-waste-picker/collection-info/collection-info.component';
 import { SupportingDocsComponent } from './rg-waste-picker/add-waste-picker/supporting-docs/supporting-docs.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 @NgModule({
     declarations: [
@@ -38,7 +46,15 @@ import { SupportingDocsComponent } from './rg-waste-picker/add-waste-picker/supp
         AgGridModule,
         ReactiveFormsModule,       
         ModalModule.forRoot(),
-        SharedModule
+        SharedModule,
+        MatInputModule,
+        MatSelectModule,
+        MatButtonModule,
+        MatIconModule,
+        MatCheckboxModule,
+        MatStepperModule,
+        MatDatepickerModule,
+        MatNativeDateModule
     ]
 })
 export class RegistrarModule { }

@@ -5,6 +5,7 @@ import {CdkStepperModule} from '@angular/cdk/stepper';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -17,6 +18,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     CdkStepperModule,
     ReactiveFormsModule,
     MatToolbarModule,
+    MatIconModule,
     BsDropdownModule.forRoot()
   ],
   exports: [
@@ -24,7 +26,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     CdkStepperModule,
     ReactiveFormsModule,
     MatToolbarModule,
-    BsDropdownModule
+    BsDropdownModule,
+    MatIconModule
   ]
 })
 export class SharedModule { }
