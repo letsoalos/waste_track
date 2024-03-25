@@ -1,12 +1,18 @@
 <div class="col-md-3 left-panel">
   <div class="sidebar-content">  
     <button *ngIf="showWastePickerButton" class="btn" 
-            routerLink="/registrar/waste-picker"
-            routerLinkActive="active"
-            ><i class="fa fa-recycle"></i> Waste Picker</button> 
-    <button *ngIf="showCooperateButton" class="btn" 
-            routerLinkActive="active"
-            routerLink="/registrar/cooperate"
-            ><i class="fa fa-building-o" aria-hidden="true"></i> Cooperate</button>  
+            routerLink="/registrar/waste-picker/add-waste-picker" 
+            routerLinkActive="active">
+            <i class="material-icons align-middle">add_circle</i> Add Waste Picker
+    </button> 
+    <button *ngIf="showCooperateButton" class="btn" routerLinkActive="active" routerLink="/registrar/cooperate">
+      <i class="fa fa-building-o align-middle" aria-hidden="true"></i> Cooperate
+    </button> 
+    <button *ngIf="showVerifierButton" class="btn" routerLinkActive="active" routerLink="/verifier/main">
+      <i class="fa fa-list align-middle" aria-hidden="true"></i> Verifier-List
+    </button>
+    <button *ngIf="showVerifierEditButton" class="btn" routerLinkActive="active" routerLink="/verifier/main">
+      <i class="fa fa-pencil-square-o align-middle" aria-hidden="true"></i> Verifier-Edit
+    </button> 
   </div>
 </div>

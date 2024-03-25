@@ -24,6 +24,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 
 @NgModule({
@@ -54,7 +56,8 @@ import { MatNativeDateModule } from '@angular/material/core';
         MatCheckboxModule,
         MatStepperModule,
         MatDatepickerModule,
-        MatNativeDateModule
+        MatNativeDateModule,
+        MatMenuModule
     ]
 })
 export class RegistrarModule { }

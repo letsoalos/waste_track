@@ -6,6 +6,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatListModule } from '@angular/material/list';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+
 
 
 
@@ -27,7 +34,12 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     MatToolbarModule,
     BsDropdownModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule,
+    MatExpansionModule,
+    MatListModule,
+    MatSelectModule,
+    MatFormFieldModule
   ]
 })
 export class SharedModule { }

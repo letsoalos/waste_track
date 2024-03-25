@@ -22,8 +22,7 @@
     color: #343a40;
     font-size: 16px;
   
-    &:hover {
-      color: #007bff; // Change to desired hover color
+    &:hover {      
       cursor: pointer;
     }
   
@@ -31,4 +30,28 @@
       color: orange; // Active color
     }
   }
+
+  .dropdown .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown:hover > .dropdown-menu, .dropend:hover > .dropdown-menu  {
+    display: block;
+    margin-top: .125em;
+    margin-left: .125em;
+  } 
+
+  .dropdown-item:hover{
+    background-color: #3498db;
+    color: #fff;
+  }
   
+  @media screen and (min-width:769px) {
+    .dropend:hover > .dropdown-menu {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      margin-left: .125em;
+    }
+    
+  }

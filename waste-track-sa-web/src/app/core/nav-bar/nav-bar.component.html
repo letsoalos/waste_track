@@ -1,56 +1,52 @@
-<header class="d-flex flex-row align-items-center justify-content-between p-3 px-4  bg-white border-bottom sticky-top shadow-sm">
+<header class="d-flex flex-row align-items-center justify-content-between p-3 px-4 bg-white border-bottom sticky-top shadow-sm">
   <a class="navbar-brand logo" href="#">
     WASTE<i class="fa fa-recycle" aria-hidden="true"></i> <span class="track" routerLink="/">TRACK</span>
-  </a>        
-  <nav class="my-2 home-link">
-    <a class="p-2" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-    <div class="btn-group" dropdown>
-      <!-- navbar.component.html -->
+  </a>
 
-      <button id="dropdown-basic1" dropdownToggle type="button" class="btn  dropdown-toggle" aria-controls="dropdown-basic1">
-        Register
+  <nav class="navbar navbar-expand-md">
+    <div class="container-fluid">
+      <a class="p-2" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSideCollapse" aria-controls="navbarSideCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <ul *dropdownMenu class="dropdown-menu" aria-labelledby="dropdown-basic3">
-        <li>
-          <a class="dropdown-item"  routerLink="/registrar"><i class="fa fa-user-plus"></i> Registrar</a>
-        </li>
-         <li>
-          <a class="dropdown-item" (click)="selectOption('verifier')"><i class="fa fa-check"></i> Verifier</a>
-        </li>
-         <li>
-          <a class="dropdown-item" routerLink="card-issuer"><i class="fa fa-credit-card"></i> Card Issuer</a>
-        </li>
-        <li>
-          <a class="dropdown-item" (click)="selectOption('verifier')"><i class="fa fa-recycle"></i> Waste Picker</a>
-        </li>
-        <li>
-          <a class="dropdown-item" (click)="selectOption('verifier')"><i class="fa fa-cog"></i> User Administrator</a>
-        </li>
-        
-      </ul>
-    </div>
-    <div class="btn-group" dropdown>
-      <button id="dropdown-basic2" dropdownToggle type="button" class="btn  dropdown-toggle" aria-controls="dropdown-basic2">
-        Config
-      </button>
-      <ul *dropdownMenu class="dropdown-menu" aria-labelledby="dropdown-basic2">
-        <li>
-          <a class="dropdown-item" routerLink="/report" routerLinkActive="active"><i class="fa fa-user"></i> User</a>
-        </li>
-        <li>
-          <a class="dropdown-item" routerLink="/report2" routerLinkActive="active"><i class="fa fa-building"> </i> Municipality</a>
-        </li>
-      </ul>
-    </div>
-    <div class="btn-group">    
-      <a class="p-2" routerLink="/report2" routerLinkActive="active">Reports</a>
+
+      <div class="collapse navbar-collapse" id="navbarSideCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="registerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Register</a>
+            <ul class="dropdown-menu" aria-labelledby="registerDropdown">
+              <li class="dropend"><a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"><i class="material-icons align-middle">person_add</i> Registrar</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" routerLink="/registrar/waste-picker"><i class="material-icons align-middle">autorenew</i> Waste-Picker</a></li>
+                  <li><a class="dropdown-item" routerLink="/registrar/cooperate"><i class="material-icons align-middle">business</i> Cooperative</a></li>
+                </ul>
+              </li>
+              <li><a class="dropdown-item" routerLink="/verifier"><i class="material-icons align-middle">how_to_reg</i> Verifier</a></li>
+              <li><a class="dropdown-item" href="#"><i class="material-icons align-middle">credit_card</i> Card Issuer</a></li>
+              <li><a class="dropdown-item" href="#"><i class="material-icons align-middle">admin_panel_settings</i> User Administrator</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="configDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Config</a>
+            <ul class="dropdown-menu" aria-labelledby="configDropdown">
+              <li><a class="dropdown-item" href="#"><i class="material-icons align-middle">supervisor_account</i> User</a></li>
+              <li><a class="dropdown-item" href="#"><i class="material-icons align-middle">location_city</i> Municipality</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="btn-group">
+        <a class="p-2" routerLink="/report2" routerLinkActive="active">Reports</a>
+      </div>
     </div>
   </nav>
+
   <div class="d-flex align-items-center">
-    <a href="" class="btn btn-outline-secondary me-2">Login</a>
-    <a href="" class="btn btn-outline-success me-3">Logout</a>
+    <a class="btn btn-outline-secondary me-2">Login</a>
+    <a class="btn btn-outline-success me-3">Logout</a>
   </div>
 </header>
-
-
-

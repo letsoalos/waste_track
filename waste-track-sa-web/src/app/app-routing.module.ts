@@ -8,10 +8,10 @@ const routes: Routes = [
     { path: 'registrar', 
       loadChildren: () => import('./registrar/registrar.module').then(mod => mod.RegistrarModule),
       data: {breadcrumb: 'registrar'} 
-    },
+    },    
     
-    
-   // { path: 'verifier', loadChildren:()=> import('./verifier/verifier.module').then(x=>x.VerifierModule) },
+    { path: 'verifier', loadChildren:()=> import('./verifier/verifier.module').then(x=>x.VerifierModule) },
+
     //{ path: 'card-issuer', component: WastePickerListComponent },  
     { path: '**', redirectTo: '', pathMatch: 'full'}
 ];
