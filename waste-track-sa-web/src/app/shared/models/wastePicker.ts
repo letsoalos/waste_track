@@ -24,12 +24,12 @@ export interface WastePickerDto {
   manualPrintCount: number
   autoPrintCount: number
   documentType: string
-  documentTypeId: string
+  documentTypeId: number
   wastePickerStatus: string
   gender: string
-  genderId: string
+  genderId: number
   race: string
-  raceId: string
+  raceId: number
   cooperative: string
 }
 

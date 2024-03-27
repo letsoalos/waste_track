@@ -7,6 +7,7 @@ import { MunicipalityDto } from '../shared/models/municipality';
 import { WorkSiteDto } from '../shared/models/workSite';
 import { SortingAreaDto } from '../shared/models/sortingArea';
 import { PaymetTypeDto } from '../shared/models/paymentType';
+import { ReclaimerDto } from '../shared/models/reclaimer';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class RegistrarService {
   constructor(private http: HttpClient) {}
 
   getWastePickers() {
-    return this.http.get<WastePickerDto[]>(this.baseUrl + 'WastePicker/get-waste-pickers')
+    return this.http.get<WastePickerDto[]>(this.baseUrl + 'WastePicker/get-waste-pickers?pageSize=50')
   }
 
   getWastePickerDetails(WastePickerId: number) {
@@ -76,4 +77,7 @@ export class RegistrarService {
     return this.http.get<WorkSiteDto>(this.baseUrl + 'WorkSite/get-work-site');
   }
 
+  getReclaimer() {
+    return this.http.get<ReclaimerDto[]>(this.baseUrl + 'ReclaimInfo/get-reclaimers');
+  }
 }

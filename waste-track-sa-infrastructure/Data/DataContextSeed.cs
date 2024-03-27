@@ -172,14 +172,14 @@ namespace waste_track_sa_infrastructure.Data
             }
 
 
-            //if (!context.ReclaimingInfo.Any())
-           // {
-           //     var oficialTypesData = File.ReadAllText("../waste-track-sa-infrastructure/Data/SeedData/oficialTypes.json");
-            //    var oficialTypes = JsonSerializer.Deserialize<List<ReclaimingInfo>>(oficialTypesData);
+            if (!context.ReclaimingInfo.Any())
+            {
+                var oficialTypesData = File.ReadAllText("../waste-track-sa-infrastructure/Data/SeedData/reclaimingInfo.json");
+                var oficialTypes = JsonSerializer.Deserialize<List<ReclaimingInfo>>(oficialTypesData);
 //#pragma warning disable CS8604 // Possible null reference argument.
-             //   context.ReclaimingInfo.AddRange(oficialTypes);
+                context.ReclaimingInfo.AddRange(oficialTypes);
 //#pragma warning restore CS8604 // Possible null reference argument. oficialTypes.json
-            //}
+            }
 
 
             if (context.ChangeTracker.HasChanges()) await context.SaveChangesAsync();

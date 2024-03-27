@@ -27,8 +27,7 @@ namespace waste_track_sa_infrastructure.Data
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<OrganizationType> OrganizationTypes { get; set; }
         public DbSet<Province> Provinces { get; set; }
-        public DbSet<Race> Race { get; set; }
-        public DbSet<ReclaimingInfo> ReclaimingInfo { get; set; }
+        public DbSet<Race> Race { get; set; }        
         public DbSet<SortingArea> SortingAreas { get; set; }
         public DbSet<SystemLog> SystemLogs { get; set; }
         public DbSet<SystemSetting> SystemSettings { get; set; }
@@ -46,6 +45,7 @@ namespace waste_track_sa_infrastructure.Data
         public DbSet<WastePickerStatus> WastePickerStatuses { get; set; }
         public DbSet<WastePickerStatusAudit> GetWastePickerStatusAudits { get; set; }
         public DbSet<Worksite> Worksites { get; set; }
+        public DbSet<ReclaimingInfo> ReclaimingInfo { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -127,7 +127,7 @@ export class RgWastePickerComponent implements OnInit{
         let statusText = '';
     
         if (params.value === "true") {
-            badgeClass = 'badge-success';
+            badgeClass = 'bg-success';
             statusText = 'Active';
         } else if (params.value.toLowerCase() === "updated") {
             badgeClass = 'bg-warning';
@@ -139,8 +139,8 @@ export class RgWastePickerComponent implements OnInit{
           badgeClass = 'bg-info';
           statusText = 'Registered';
         }
-          else {
-            badgeClass = 'badge-danger';
+        else {
+            badgeClass = 'bg-secondary';
             statusText = 'Not Active';
         }
     

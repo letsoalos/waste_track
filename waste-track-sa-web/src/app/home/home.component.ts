@@ -3,7 +3,8 @@ import { MunicipalityDto } from '../shared/models/municipality';
 import { RegistrarService } from '../registrar/registrar.service';
 import { DocumentTypeDto, GenderDto, WastePickerDto } from '../shared/models/wastePicker';
 import { SortingAreaDto } from '../shared/models/sortingArea';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
+import { ReclaimerDto } from '../shared/models/reclaimer';
 
 declare var google: any;
 
@@ -18,6 +19,7 @@ export class HomeComponent implements OnInit {
   sortingAreas: any | SortingAreaDto[] = [];
   genders: any | GenderDto[] = [];
   documentTypes: any | DocumentTypeDto[] = [];
+  reclaimers: any | ReclaimerDto[] = [];
   
   totalMunicipalities: number = 0;
   totalWastePickers: number = 0; 
@@ -44,7 +46,11 @@ export class HomeComponent implements OnInit {
     });
     this.loadRaceByWastePicker().subscribe(wastePickers => {
       this.buildChart2(wastePickers);
-    });        
+    }); 
+    
+    this.loadWastePickersPerMunicipality().subscribe(wastePickersPerMunicipality => {
+      this.buildMunicipalityBarChart(wastePickersPerMunicipality);
+    });
   });
 }
 
@@ -70,10 +76,10 @@ export class HomeComponent implements OnInit {
     };
   
     var renderChart = (Chart: any) => {
-      var maleCount = wastePickers.filter(wp => wp.genderId === '1').length;
-      var femaleCount = wastePickers.filter(wp => wp.genderId === '2').length;
-      var otherCount = wastePickers.filter(wp => wp.genderId === '3').length;
-      var nonBinaryCount = wastePickers.filter(wp => wp.genderId === '4').length;
+      var maleCount = wastePickers.filter(wp => wp.genderId === 1).length;
+      var femaleCount = wastePickers.filter(wp => wp.genderId === 2).length;
+      var otherCount = wastePickers.filter(wp => wp.genderId === 3).length;
+      var nonBinaryCount = wastePickers.filter(wp => wp.genderId === 4).length;
   
       console.log('Male Count:', maleCount);
       console.log('Female Count:', femaleCount);
@@ -119,8 +125,8 @@ export class HomeComponent implements OnInit {
     };
   
     var renderChart = (Chart: any) => {
-      var saCount = wastePickers.filter(wp => wp.documentTypeId === '1').length;
-      var otherCount = wastePickers.filter(wp => wp.documentTypeId === '2').length;
+      var saCount = wastePickers.filter(wp => wp.documentTypeId === 1).length;
+      var otherCount = wastePickers.filter(wp => wp.documentTypeId === 2).length;
   
   
       var data = google.visualization.arrayToDataTable([
@@ -148,7 +154,7 @@ export class HomeComponent implements OnInit {
       pieSliceText: 'percentage', // Display percentage labels on slices
       slices: {
         0: { color: '#20c997' }, // Set color for each slice
-        1: { color: '#d63384' },
+        1: { color: '#d63384' }, //#d63384 
         2: { color: '#0dcaf0' }, // Add more colors as needed
         3: { color: '#ffc107' },
         // Add more color configurations for additional slices
@@ -160,10 +166,10 @@ export class HomeComponent implements OnInit {
     };
   
     var renderChart = (Chart: any) => {
-        var blackCount = wastePickers.filter(wp => wp.raceId === '1').length;
-        var whiteCount = wastePickers.filter(wp => wp.raceId === '2').length;
-        var colouredCount = wastePickers.filter(wp => wp.raceId === '3').length;
-        var indianCount = wastePickers.filter(wp => wp.raceId === '4').length;
+        var blackCount = wastePickers.filter(wp => wp.raceId === 1).length;
+        var whiteCount = wastePickers.filter(wp => wp.raceId === 2).length;
+        var colouredCount = wastePickers.filter(wp => wp.raceId === 3).length;
+        var indianCount = wastePickers.filter(wp => wp.raceId === 4).length;
     
         console.log('Counts:', blackCount, whiteCount, colouredCount, indianCount);
     
@@ -186,13 +192,57 @@ export class HomeComponent implements OnInit {
     google.charts.setOnLoadCallback(callBack);
 }
 
+buildMunicipalityBarChart(wastePickersPerMunicipality: Map<string, ReclaimerDto[]>) {
+  const municipalities = Array.from(wastePickersPerMunicipality.keys());
+  const wastePickerCounts = Array.from(wastePickersPerMunicipality.values()).map(wastePickers => wastePickers.length);
 
+  var options = {
+    title: 'Number of Waste Pickers per Municipality',
+    legend: { position: 'top' },
+    annotations: {
+      textStyle: {
+        fontSize: 12,
+        bold: true,
+        color: 'black'
+      }
+    }
+  };
 
+  var renderChart = (Chart: any) => {
+    var data = google.visualization.arrayToDataTable([
+      ['Municipality', 'Number of Waste Pickers', { role: 'annotation' }],
+      ...municipalities.map((municipality, index) => [municipality, wastePickerCounts[index], wastePickerCounts[index].toString()])
+    ]);
+
+    var chart = new google.visualization.BarChart(document.getElementById("wastePickersPerMunicipalityChart"));
+    chart.draw(data, options);
+  };
+
+  var barChart = () => new google.visualization.BarChart(document.getElementById("wastePickersPerMunicipalityChart"));
+  var callBack = () => renderChart(barChart);
+  google.charts.setOnLoadCallback(callBack);
+}
 
 
 
   loadGenderByWastePicker(): Observable<WastePickerDto[]> {
     return this.registrarService.getWastePickers();
+  }
+
+  loadWastePickersPerMunicipality(): Observable<Map<string, ReclaimerDto[]>> {
+    return this.registrarService.getReclaimer().pipe(
+      map((reclaimers: ReclaimerDto[]) => {
+        const groupedByMunicipality = new Map<string, ReclaimerDto[]>();
+        reclaimers.forEach(reclaimer => {
+          const municipality = reclaimer.municipality;
+          if (!groupedByMunicipality.has(municipality)) {
+            groupedByMunicipality.set(municipality, []);
+          }
+          groupedByMunicipality.get(municipality)!.push(reclaimer); // Type assertion added here
+        });
+        return groupedByMunicipality;
+      })
+    );
   }
 
   loadDocumentTypeByWastePicker(): Observable<WastePickerDto[]> {
