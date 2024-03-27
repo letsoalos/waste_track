@@ -1,11 +1,48 @@
-.row {
-    display: flex;
-  }
-  
-  .side-panel {
-    flex: 1; /* Grow to fill available space */
-    background-color: hsl(0, 68%, 51%); /* Set your desired background color */
-    padding: 20px; /* Add some padding to the side panel */
-  }
-  
-  
+/* Updated CSS to align with Bootstrap 5 code */
+
+/* Styling for cards */
+.card {
+  background-color: #fff; /* Background color for the card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Box shadow for the card */
+  transition: box-shadow 0.3s ease; /* Smooth transition effect for box shadow */
+  margin-bottom: 16px; /* Add margin bottom for spacing */
+  height: 150px; /* Fixed height for consistent sizing */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center; /* Align text to center */
+  padding: 20px 0; /* Adjust top and bottom padding to push content to the middle */
+}
+
+
+/* Hover effect for cards */
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  cursor: pointer;
+}
+
+/* Styling for headings inside card-body */
+.card-body h2 {
+  //font-size: 1rem; /* Increase font size for headings */
+  margin-bottom: 8px; /* Add margin bottom for spacing */
+  color: #77c0f0; /* Heading text color */
+}
+
+/* Styling for paragraphs inside card-body */
+.card-body p {
+  font-size: 2rem; /* Increase font size for paragraphs */
+  color: #e97f51; /* Text color for paragraphs */
+  margin-bottom: 4px; /* Add margin bottom for spacing */
+  font-weight: 500; /* Font weight for paragraphs */
+}
+
+/* Styling for charts */
+#divBarChart,
+#ageByGenderChart,
+#divRacePieChart,
+#divDocumentTypeBarChart,
+#registrationByMunicipalityChart {
+  height: 400px; /* Set height for the charts */
+  margin-top: 16px; /* Add margin top for spacing */
+}

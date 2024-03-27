@@ -1,44 +1,56 @@
-.left-panel {
-  height: 100vh;
-  width: 220px;
+.mat-sidenav-container {
+  height: calc(100vh - 80px); /* Adjusted height to account for navbar height */
+}
+
+.mat-sidenav {
+  width: 200px; /* Set width for the sidebar */
+  background-color: hsl(207, 77%, 88%); /* Set background color */
   position: fixed;
-  top: 0;
+  top: 80px; /* Adjusted top position to avoid overlapping with navbar */
   left: 0;
   display: flex;
+  flex-direction: column; /* Ensure items are stacked vertically */
+  padding-bottom: 20px; /* Add padding to the bottom */
+}
+
+.mat-list-item {
+  cursor: pointer; /* Change cursor to pointer for list items */
+  display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  background-color: #dee2e6;
-
-  .list-group {
-    flex: 1;
-    margin-bottom: 20px;
-  }
-
-  .sidebar-content {
-    margin-top: 120px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .sidebar-content .btn {
-    display: block;
-    margin-bottom: 5px !important; /* Adjust the value as needed */
-    padding: 10px 10px;
-    background-color: #3498db; /* Blue color, you can change it to any color you prefer */
-    color: #fff; /* White text color */
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    transition: background-color 0.3s ease; /* Smooth transition effect on hover */
-    width: 200px; /* Set a fixed width for the buttons */
-    text-align: left !important;
-  
-    /* Hover effect */
-    &:hover {
-      background-color: #007bff; /* Darker shade of blue on hover */
-    }
-  }
+  align-items: center;
+  justify-content: flex-start;
+  color: #fff !important;
   
 }
+
+.mat-list-item.active {
+  background-color: #ccc; /* Set background color for active item */
+}
+
+.mat-sidenav-content {
+  padding-top: 64px; /* Adjust as needed based on your navbar height */
+  z-index: 1; /* Ensure the content is above the navbar */
+}
+
+.btn {
+  display: block;
+  margin: 20px auto; /* Center the button horizontally within its container */
+  padding: 8px 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  width: 180px;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+
+  /* Hover effect */
+  &:hover {
+    background-color: #007bff;
+  }
+}
+
+

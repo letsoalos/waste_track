@@ -6,12 +6,9 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainWindowComponent } from './main-window/main-window.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -23,17 +20,19 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule   
+    SharedModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    FlexLayoutModule
   ],
   exports: [
     NavBarComponent,
     FooterComponent,
     SidebarComponent,
     MainWindowComponent,
+    MatSidenavModule,
     MatToolbarModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatIconModule
+    FlexLayoutModule
   ]
 })
 export class CoreModule { }

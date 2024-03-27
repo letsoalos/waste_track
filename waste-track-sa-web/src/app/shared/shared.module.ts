@@ -11,8 +11,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
-
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatGridListModule } from '@angular/material/grid-list'; // Import MatGridListModule
+import { MatCardModule } from '@angular/material/card'
 
 
 
@@ -39,7 +40,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatExpansionModule,
     MatListModule,
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSidenavModule,
+    MatGridListModule, // Add MatGridListModule to imports array
+    MatCardModule
+    
+    
+        
+
   ]
 })
 export class SharedModule { }

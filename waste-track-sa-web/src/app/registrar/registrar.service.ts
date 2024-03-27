@@ -17,7 +17,7 @@ export class RegistrarService {
   constructor(private http: HttpClient) {}
 
   getWastePickers() {
-    return this.http.get<WastePickerDto>(this.baseUrl + 'WastePicker/get-waste-pickers')
+    return this.http.get<WastePickerDto[]>(this.baseUrl + 'WastePicker/get-waste-pickers')
   }
 
   getWastePickerDetails(WastePickerId: number) {
@@ -57,7 +57,7 @@ export class RegistrarService {
   }
 
   getDocumentType() {
-    return this.http.get<DocumentTypeDto>(this.baseUrl + 'DocumentType/get-document-type' );
+    return this.http.get<DocumentTypeDto[]>(this.baseUrl + 'DocumentType/get-document-type' );
   }
 
   getPaymentType() {
@@ -69,7 +69,7 @@ export class RegistrarService {
   }
 
   getMunicipality() {
-    return this.http.get<MunicipalityDto>(this.baseUrl + 'Municipality/get-municipalities');
+    return this.http.get<MunicipalityDto[]>(this.baseUrl + 'Municipality/get-municipalities');
   }
 
   getWorkSite() {

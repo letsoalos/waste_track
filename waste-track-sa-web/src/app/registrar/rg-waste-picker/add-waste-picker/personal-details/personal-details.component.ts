@@ -14,18 +14,11 @@ export class PersonalDetailsComponent implements OnInit {
   @ViewChild('video') videoElement!: ElementRef;
   @ViewChild('canvas') canvasElement!: ElementRef;
   
-  
   genders: any | GenderDto[] = [];
   races: any | RaceDto[] = [];
   documentTypes: any | DocumentTypeDto[] = [];
-  video: any | HTMLVideoElement;
-  canvas: any | HTMLCanvasElement;
-  photo: any | HTMLImageElement;
-  showRetakeBtn: boolean = false;
   capturedImages: string[] = [];
-  rearCamera: boolean = true;
   isCameraOn: boolean = false;
-
 
   constructor(private registrarService: RegistrarService) {}
   
@@ -35,15 +28,15 @@ export class PersonalDetailsComponent implements OnInit {
     this.loadDocumentType();
   }
 
-    loadGender(): void {
-      this.registrarService.getGender().subscribe({
-        next: (res) => {
-          console.log(res);
-          this.genders = res;
-        },
-        error: (err) => {
-          console.log(err);
-        }
+  loadGender(): void {
+    this.registrarService.getGender().subscribe({
+      next: (res) => {
+        console.log(res);
+        this.genders = res;
+      },
+      error: (err) => {
+        console.log(err);
+      }
     });
   }
 
@@ -71,36 +64,36 @@ export class PersonalDetailsComponent implements OnInit {
     });
   }
 
-  // Function to switch camera
+  toggleCamera() {
+    if (this.isCameraOn) {
+      this.takePhoto();
+    } else {
+      this.switchCamera();
+    }
+  }
+
   switchCamera() {
     this.isCameraOn = !this.isCameraOn;
     if (this.isCameraOn) {
-        // Start the camera if it's switched on
         this.startCamera();
     } else {
-        // Stop the camera if it's switched off
         this.stopCamera();
     }
-}
+  }
 
-stopCamera() {
-  // Logic to stop the camera (e.g., stop video stream)
-  // For example, if you're using HTMLMediaElement for video:
-  const videoElement = document.querySelector('video');
-  const mediaStream = videoElement!.srcObject as MediaStream;
-  const tracks = mediaStream.getTracks();
-  tracks.forEach(track => track.stop());
-  videoElement!.srcObject = null;
-}
-
-
+  stopCamera() {
+    // Logic to stop the camera
+    const videoElement = this.videoElement.nativeElement;
+    const mediaStream = videoElement.srcObject as MediaStream;
+    const tracks = mediaStream.getTracks();
+    tracks.forEach(track => track.stop());
+    videoElement.srcObject = null;
+  }
 
   startCamera() {
     const video = this.videoElement.nativeElement;
     const constraints = {
-      video: {
-        facingMode: this.rearCamera ? 'environment' : 'user'
-      }
+      video: true
     };
 
     navigator.mediaDevices.getUserMedia(constraints)
@@ -122,19 +115,16 @@ stopCamera() {
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
   
     const imageDataUrl = canvas.toDataURL('image/png');
-    console.log('Image captured:', imageDataUrl); // Log the captured image data URL
+    console.log('Image captured:', imageDataUrl);
   
     if (this.capturedImages.length < 3) {
       this.capturedImages.push(imageDataUrl);
     } else {
-      console.log('Maximum limit reached.'); // Log a message if the maximum limit is reached
+      console.log('Maximum limit reached.');
     }
   }
 
-  // Inside your component class
-retakePhoto(index: number): void {
-  this.capturedImages.splice(index, 1);
+  retakePhoto(index: number): void {
+    this.capturedImages.splice(index, 1);
+  }
 }
-
-}
-

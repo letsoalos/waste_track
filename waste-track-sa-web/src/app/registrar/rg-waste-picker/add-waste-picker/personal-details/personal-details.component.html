@@ -106,16 +106,13 @@
                     </div>
                     <!-- Buttons Section -->
                     <div class="button-container">
-                        <button mat-raised-button color="primary" (click)="switchCamera()" [disabled]="capturedImages.length > 0">
-                            <mat-icon>power_settings_new</mat-icon> Switch Camera
-                        </button>
-                        <button mat-raised-button color="primary" (click)="takePhoto()" [disabled]="!isCameraOn || capturedImages.length >= 4">
-                            <mat-icon>camera_alt</mat-icon> Take Photo
+                        <button mat-raised-button color="primary" (click)="toggleCamera()">
+                            <mat-icon>{{ isCameraOn ? 'camera_alt' : 'power_settings_new' }}</mat-icon> {{ isCameraOn ? 'Take Photo' : 'Switch Camera' }}
                         </button>
                     </div>
                 </div>
                 <!-- Album -->
-                <div class="album">
+                <div class="album" style="height: 240px;"> <!-- Set a fixed height for the album -->
                     <!-- Placeholder for four images -->
                     <div class="row">
                         <div class="col-md-3" *ngFor="let image of capturedImages; let i = index">
@@ -136,7 +133,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>   
 </div>
 
 <div class="d-flex justify-content-between flex-row my-3">
