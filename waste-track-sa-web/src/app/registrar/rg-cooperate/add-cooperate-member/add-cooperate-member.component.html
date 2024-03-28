@@ -1,0 +1,33 @@
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-12">
+            <mat-horizontal-stepper #appStepper>
+                <mat-step label="Consent">
+                    <ng-template matStepLabel>
+                        <span>Consent</span>
+                    </ng-template>
+                    <div #pdfViewerContainer id="pdfViewerContainer"></div>
+                    <app-consent-docs></app-consent-docs>
+                </mat-step>
+                <mat-step label="Personal Details">
+                    <ng-template matStepLabel>
+                        <span>Personal Details</span>
+                    </ng-template>
+                    <app-personal-details [addWastePickerForm]="addWastePickerForm"></app-personal-details>
+                </mat-step>
+                <mat-step label="Collection Information">
+                    <ng-template matStepLabel>
+                        <span>Collection Information</span>
+                    </ng-template>
+                    <app-collection-info [addWastePickerForm]="addWastePickerForm"></app-collection-info>
+                </mat-step>
+                <mat-step label="Supporting Documents">
+                    <ng-template matStepLabel>
+                        <span>Supporting Documents</span>
+                    </ng-template>
+                    <app-supporting-docs></app-supporting-docs>
+                </mat-step>
+            </mat-horizontal-stepper>
+        </div>
+    </div>
+</div>

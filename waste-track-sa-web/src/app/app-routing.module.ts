@@ -10,7 +10,8 @@ const routes: Routes = [
       data: {breadcrumb: 'registrar'} 
     },
     { path: 'verifier', loadChildren:()=> import('./verifier/verifier.module').then(x => x.VerifierModule) },
-    { path: 'home', loadChildren:()=> import('./home/home.module').then(x => x.HomeModule) },  
+    { path: 'home', loadChildren:()=> import('./home/home.module').then(x => x.HomeModule) }, 
+    { path: 'municipality', loadChildren:()=> import('./municipality/municipality.module').then(x => x.MunicipalityModule)},
     { path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

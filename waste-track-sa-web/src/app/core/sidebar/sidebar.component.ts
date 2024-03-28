@@ -11,6 +11,7 @@ export class SidebarComponent implements OnInit {
   showCooperateButton: boolean = false;
   showVerifierButton: boolean = false;
   showVerifierEditButton: boolean = false;
+  showMunicipalityButton: boolean = false;
 
   constructor(private router: Router) { }
 
@@ -24,6 +25,7 @@ export class SidebarComponent implements OnInit {
         this.showCooperateButton = currentUrl.startsWith('/registrar/cooperate');
         this.showVerifierButton = currentUrl.startsWith('/verifier');
         this.showVerifierEditButton = currentUrl.startsWith('/verifier');
+        this.showMunicipalityButton = currentUrl.startsWith('/municipality');
         console.log('Show Waste Picker Button:', this.showWastePickerButton);
         console.log('Show Cooperate Button:', this.showCooperateButton);
         console.log('Show Verifier Button:', this.showVerifierButton);

@@ -25,6 +25,9 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
+import { CooperateDetailsComponent } from './rg-cooperate/cooperate-details/cooperate-details.component';
+import { AddCooperateMemberComponent } from './rg-cooperate/add-cooperate-member/add-cooperate-member.component';
+import { EditCooperateMemberComponent } from './rg-cooperate/edit-cooperate-member/edit-cooperate-member.component';
 
 
 
@@ -41,6 +44,9 @@ import { MatMenuModule } from '@angular/material/menu';
         TextInputComponent,
         CollectionInfoComponent,
         SupportingDocsComponent,
+        CooperateDetailsComponent,
+        AddCooperateMemberComponent,
+        EditCooperateMemberComponent,
     ],
     imports: [
         CommonModule,

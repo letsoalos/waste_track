@@ -11,6 +11,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ToastrModule } from 'ngx-toastr';
 import { SectionHeaderComponent } from './section-header/section-header.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { SectionHeaderComponent } from './section-header/section-header.componen
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
       preventDuplicates: true
-    })
+    }),
+    NgxSpinnerModule,
+    
   ],
   exports: [
     NavBarComponent,
@@ -40,7 +43,8 @@ import { SectionHeaderComponent } from './section-header/section-header.componen
     MatSidenavModule,
     MatToolbarModule,
     FlexLayoutModule,
-    SectionHeaderComponent
+    SectionHeaderComponent,
+    NgxSpinnerModule
   ]
 })
 export class CoreModule { }

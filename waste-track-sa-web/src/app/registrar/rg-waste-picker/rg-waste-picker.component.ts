@@ -46,9 +46,8 @@ export class RgWastePickerComponent implements OnInit{
 
   loadWastePickerList() {
     this.registrarService.getWastePickers().subscribe({
-      next: (res) => {
-        this.wastePickers = res;
-        this.rowData = this.wastePickers;
+      next: (res: WastePickerDto[]) => {
+        this.rowData = res.filter((picker: WastePickerDto) => picker.isMemberCooperative === false);
       },
       error: (err) => {
         console.log(err);

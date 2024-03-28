@@ -11,7 +11,7 @@
      
         <button *ngIf="showCooperateButton" class="btn" 
             routerLinkActive="active" 
-            routerLink="/registrar/cooperate">
+            routerLink="/registrar/cooperate/add-cooperate-member">
             <i class="material-icons align-middle">add_circle</i> Cooperate Member
         </button> 
         <button *ngIf="showVerifierButton" class="btn" 
@@ -24,6 +24,11 @@
                 routerLink="/verifier/main">
               <i class="fa fa-pencil-square-o align-middle" aria-hidden="true"></i> Verifier-Edit
         </button> 
+        <button *ngIf="showMunicipalityButton" class="btn" 
+                routerLinkActive="active" 
+                routerLink="/municipality">
+                <i class="material-icons align-middle">add_circle</i> Municipality
+</button>
       
       
     </mat-nav-list>
