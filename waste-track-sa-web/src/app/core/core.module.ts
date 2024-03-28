@@ -9,13 +9,16 @@ import { MainWindowComponent } from './main-window/main-window.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ToastrModule } from 'ngx-toastr';
+import { SectionHeaderComponent } from './section-header/section-header.component';
 
 @NgModule({
   declarations: [
     NavBarComponent,
     FooterComponent,
     SidebarComponent,
-    MainWindowComponent
+    MainWindowComponent,
+    SectionHeaderComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +26,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     SharedModule,
     MatSidenavModule,
     MatToolbarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true
+    })
   ],
   exports: [
     NavBarComponent,
@@ -32,7 +39,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MainWindowComponent,
     MatSidenavModule,
     MatToolbarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    SectionHeaderComponent
   ]
 })
 export class CoreModule { }
