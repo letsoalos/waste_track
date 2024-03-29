@@ -41,7 +41,6 @@ import { EditCooperateMemberComponent } from './rg-cooperate/edit-cooperate-memb
         AddWastePickerComponent,
         ConsentDocsComponent,
         PersonalDetailsComponent,
-        TextInputComponent,
         CollectionInfoComponent,
         SupportingDocsComponent,
         CooperateDetailsComponent,

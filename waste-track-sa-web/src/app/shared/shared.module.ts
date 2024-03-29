@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StepperComponent } from './components/stepper/stepper.component';
-import {CdkStepperModule} from '@angular/cdk/stepper';
+import { CdkStepperModule } from '@angular/cdk/stepper';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -12,14 +11,16 @@ import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatGridListModule } from '@angular/material/grid-list'; // Import MatGridListModule
-import { MatCardModule } from '@angular/material/card'
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 
-
+import { StepperComponent } from './components/stepper/stepper.component';
+import { TextInputComponent } from './components/text-input/text-input.component'; // Import TextInputComponent here
 
 @NgModule({
   declarations: [
-    StepperComponent
+    StepperComponent,
+    TextInputComponent // Declare TextInputComponent here
   ],
   imports: [
     CommonModule,
@@ -31,6 +32,7 @@ import { MatCardModule } from '@angular/material/card'
   ],
   exports: [
     StepperComponent,
+    TextInputComponent, // Export TextInputComponent here
     CdkStepperModule,
     ReactiveFormsModule,
     MatToolbarModule,
@@ -42,12 +44,9 @@ import { MatCardModule } from '@angular/material/card'
     MatSelectModule,
     MatFormFieldModule,
     MatSidenavModule,
-    MatGridListModule, // Add MatGridListModule to imports array
-    MatCardModule
-    
-    
-        
-
+    MatGridListModule,
+    MatCardModule,
+    TextInputComponent
   ]
 })
 export class SharedModule { }
