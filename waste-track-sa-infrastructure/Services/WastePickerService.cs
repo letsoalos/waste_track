@@ -16,6 +16,14 @@ namespace waste_track_sa_infrastructure.Services
         {  
             var existingWastePicker = await _unitOfWork.Repository<WastePicker>().Get(x => x.Id == wastePicker.Id);
 
+            // Generate a unique Waste Picker Number
+           int wastePickerNumber;
+           do
+           {
+                wastePickerNumber = Convert.ToInt32(GenerateUniqueWastePickerNumber());
+           } while (await WastePickerNumberExists(wastePickerNumber)); while (await WastePickerNumberExists(wastePickerNumber));
+
+
             if (existingWastePicker == null)
             {
                 wastePicker = new WastePicker()
@@ -30,7 +38,7 @@ namespace waste_track_sa_infrastructure.Services
                     AltCellphoneNo = wastePicker.AltCellphoneNo,
                     Potrait = wastePicker.Potrait,
                     DocumentTypeId = wastePicker.DocumentTypeId,
-                    WastePickerNo = wastePicker.WastePickerNo,
+                    WastePickerNo = wastePickerNumber,
                     Comment = wastePicker.Comment,
                     Consent = wastePicker.Consent,
                     CreatedBy = wastePicker.CreatedBy = "test@gmail.com",
@@ -170,6 +178,28 @@ namespace waste_track_sa_infrastructure.Services
         return numbers;
     }
 
-      
+private string GenerateUniqueWastePickerNumber()
+{
+    const int wastePickerNumberLength = 7;
+    Random random = new Random();
+    List<int> numbers = new List<int>();
+
+    while (numbers.Count < wastePickerNumberLength)
+    {
+        int randomNumber = random.Next(0, 10); // Generate a random digit between 0 and 9
+        if (!numbers.Contains(randomNumber))
+        {
+            numbers.Add(randomNumber);
+        }
+    }
+
+        return string.Join("", numbers); // Concatenate the digits to form the Waste Picker Number
+    }
+
+// Method to check if a Waste Picker Number already exists in the database
+        private async Task<bool> WastePickerNumberExists(int wastePickerNumber)
+        {
+            return await _unitOfWork.Repository<WastePicker>().Get(x => x.WastePickerNo == wastePickerNumber) != null;
+        }
     }
 }

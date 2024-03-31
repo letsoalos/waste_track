@@ -1,7 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { RegistrarService } from 'src/app/registrar/registrar.service';
-import { CameraService } from 'src/app/shared/camera.service';
 import { GenderDto, RaceDto, DocumentTypeDto } from 'src/app/shared/models/wastePicker';
 
 @Component({
@@ -26,6 +25,8 @@ export class PersonalDetailsComponent implements OnInit {
     this.loadGender();
     this.loadRace();
     this.loadDocumentType();
+    // Calculate age initially
+    this.calculateAgeOnLoad();
   }
 
   loadGender(): void {
@@ -126,5 +127,25 @@ export class PersonalDetailsComponent implements OnInit {
 
   retakePhoto(index: number): void {
     this.capturedImages.splice(index, 1);
+  }
+
+  calculateAgeOnLoad() {
+    const dobControl = this.addWastePickerForm.get('personalDetailsForm.dob');
+    if (dobControl && dobControl.value) {
+      const dob = new Date(dobControl.value);
+      const age = this.calculateAge(dob);
+      this.addWastePickerForm.get('personalDetailsForm.age')?.setValue(age);
+    }
+  }
+
+  calculateAge(dob: Date): number {
+    const today = new Date();
+    const dobDate = new Date(dob);
+    let age = today.getFullYear() - dobDate.getFullYear();
+    const monthDiff = today.getMonth() - dobDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dobDate.getDate())) {
+      age--;
+    }
+    return age;
   }
 }

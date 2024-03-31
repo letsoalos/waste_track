@@ -8,12 +8,16 @@ import { AccountService } from './account/account.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  isRegistrarRoute = false;
+  isLoggedIn: boolean = false;
 
-  constructor(private router: Router,private accountService: AccountService) {} 
+  constructor(private accountService: AccountService) {} 
 
   ngOnInit(): void {
     this.loadCurrentUser();
+
+    this.accountService.currentUser$.subscribe(user => {
+      this.isLoggedIn = !!user;
+    });
   }
 
   loadCurrentUser() {

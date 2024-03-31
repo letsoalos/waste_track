@@ -13,7 +13,9 @@
                     <div class="col-md-8 mb-3">
                         <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Date of Birth</mat-label>
-                            <input matInput [matDatepicker]="dobPicker" formControlName="dob">
+                            <input matInput [matDatepicker]="dobPicker" formControlName="dob" 
+                                (input)="addWastePickerForm && addWastePickerForm.get('personalDetailsForm.dob')?.setValue($event.target)">
+
                             <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
                             <mat-datepicker #dobPicker></mat-datepicker>
                         </mat-form-field>
@@ -21,9 +23,10 @@
                     <div class="col-md-4 mb-3">
                         <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Age (Auto-calculated)</mat-label>
-                            <input matInput formControlName="age" readonly>
+                            <input matInput formControlName="age" [value]="calculateAge(addWastePickerForm.get('personalDetailsForm.dob')?.value)" readonly>
+
                         </mat-form-field>
-                    </div>
+                    </div>                    
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -77,7 +80,7 @@
                             </mat-select>
                         </mat-form-field>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4" *ngIf="addWastePickerForm.get('personalDetailsForm.documentType')?.value === 1">
                         <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Identity Number</mat-label>
                             <input matInput formControlName="identityNumber">

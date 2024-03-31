@@ -197,7 +197,7 @@ buildMunicipalityBarChart(wastePickersPerMunicipality: Map<string, ReclaimerDto[
   const wastePickerCounts = Array.from(wastePickersPerMunicipality.values()).map(wastePickers => wastePickers.length);
 
   var options = {
-    title: 'Number of Waste Pickers per Municipality',
+    title: 'Reclaimer info per Municipality',
     legend: { position: 'top' },
     annotations: {
       textStyle: {
