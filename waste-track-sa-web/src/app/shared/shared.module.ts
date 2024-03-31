@@ -15,12 +15,12 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 
 import { StepperComponent } from './components/stepper/stepper.component';
-import { TextInputComponent } from './components/text-input/text-input.component'; // Import TextInputComponent here
+import { TextInputComponent } from './components/text-input/text-input.component';
 
 @NgModule({
   declarations: [
     StepperComponent,
-    TextInputComponent // Declare TextInputComponent here
+    TextInputComponent
   ],
   imports: [
     CommonModule,

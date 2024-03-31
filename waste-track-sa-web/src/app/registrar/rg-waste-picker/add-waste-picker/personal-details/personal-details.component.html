@@ -3,140 +3,130 @@
         <h4 class="mb-4">Personal details</h4>
     </div>
     <div class="row">
-        <div class="col-md-6">
-            <div formGroupName="personalDetailsForm">
-                <mat-form-field appearance="fill" class="w-100">
-                    <mat-label>First name</mat-label>
-                    <input matInput formControlName="firstName">
-                </mat-form-field>
-                <div class="row">
-                    <div class="col-md-8 mb-3">
-                        <mat-form-field appearance="fill" class="w-100">
-                            <mat-label>Date of Birth</mat-label>
-                            <input matInput [matDatepicker]="dobPicker" formControlName="dob" 
-                                (input)="addWastePickerForm && addWastePickerForm.get('personalDetailsForm.dob')?.setValue($event.target)">
-
-                            <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
-                            <mat-datepicker #dobPicker></mat-datepicker>
-                        </mat-form-field>
-                    </div>                    
-                    <div class="col-md-4 mb-3">
-                        <mat-form-field appearance="fill" class="w-100">
-                            <mat-label>Age (Auto-calculated)</mat-label>
-                            <input matInput formControlName="age" [value]="calculateAge(addWastePickerForm.get('personalDetailsForm.dob')?.value)" readonly>
-
-                        </mat-form-field>
-                    </div>                    
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <mat-form-field appearance="fill" class="w-100">
-                            <mat-label>Cell phone number</mat-label>
-                            <input matInput formControlName="cellphoneNo">
-                        </mat-form-field>
-                    </div>
-                    <div class="col-md-6">
-                        <mat-form-field appearance="fill" class="w-100">
-                            <mat-label>Alternative phone number</mat-label>
-                            <input matInput formControlName="altCellphoneNo">
-                        </mat-form-field>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div formGroupName="personalDetailsForm">
-                <mat-form-field appearance="fill" class="w-100">
-                    <mat-label>Last name</mat-label>
-                    <input matInput formControlName="lastName">
-                </mat-form-field>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <mat-form-field appearance="fill" class="w-100">
-                            <mat-label>Gender</mat-label>
-                            <mat-select formControlName="gender">
-                                <mat-option disabled selected>Please select gender</mat-option>
-                                <mat-option *ngFor="let gender of genders" [value]="gender.id">{{ gender.name }}</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <mat-form-field appearance="fill" class="w-100">
-                            <mat-label>Race</mat-label>
-                            <mat-select formControlName="race">
-                                <mat-option disabled selected>Please select race</mat-option>
-                                <mat-option *ngFor="let race of races" [value]="race.id">{{ race.name }}</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <mat-form-field appearance="fill" class="w-100">
-                            <mat-label>Document Type</mat-label>
-                            <mat-select formControlName="documentType">
-                                <mat-option disabled selected>Please document type</mat-option>
-                                <mat-option *ngFor="let documentType of documentTypes" [value]="documentType.id">{{ documentType.docType }}</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-                    <div class="col-md-4" *ngIf="addWastePickerForm.get('personalDetailsForm.documentType')?.value === 1">
-                        <mat-form-field appearance="fill" class="w-100">
-                            <mat-label>Identity Number</mat-label>
-                            <input matInput formControlName="identityNumber">
-                        </mat-form-field>
-                    </div>
-                    <div class="col-md-4">
-                        <mat-form-field appearance="fill" class="w-100">
-                            <mat-label>Other Identity Number</mat-label>
-                            <input matInput formControlName="otherIdentityNumber">
-                        </mat-form-field>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Camera and Album Section -->
-    <div class="row">
-        <div class="col-md-12">
-            <div class="camera-and-album">
-                <!-- Camera Placeholder -->
-                <div class="camera-container">
-                    <div class="camera-frame">
-                        <video #video autoplay></video>
-                        <canvas #canvas style="display: none;"></canvas>
-                    </div>
-                    <!-- Buttons Section -->
-                    <div class="button-container">
-                        <button mat-raised-button color="primary" (click)="toggleCamera()">
-                            <mat-icon>{{ isCameraOn ? 'camera_alt' : 'power_settings_new' }}</mat-icon> {{ isCameraOn ? 'Take Photo' : 'Switch Camera' }}
-                        </button>
-                    </div>
-                </div>
-                <!-- Album -->
-                <div class="album" style="height: 240px;"> <!-- Set a fixed height for the album -->
-                    <!-- Placeholder for four images -->
+        <div class="row col-9">
+            <div class="col-md-6">
+                <div formGroupName="personalDetailsForm">
+                    <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>First name</mat-label>
+                        <input matInput formControlName="firstName">
+                    </mat-form-field>
                     <div class="row">
-                        <div class="col-md-3" *ngFor="let image of capturedImages; let i = index">
-                            <div class="card mb-3 shadow-sm">
-                                <img *ngIf="image" [src]="image" class="card-img-top" alt="Captured Image">
-                                <div *ngIf="!image" class="placeholder card-img-top">No Image</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Image {{ i + 1 }}</h5>
-                                    <!-- Retake Button -->
-                                    <button mat-raised-button color="warn" *ngIf="image" (click)="retakePhoto(i)">
-                                        <mat-icon>refresh</mat-icon> Retake
-                                    </button>
-                                    <!-- Add any additional information here -->
-                                </div>
-                            </div>
+                        <div class="col-md-8 mb-3">
+                            <mat-form-field appearance="fill" class="w-100">
+                                <mat-label>Date of Birth</mat-label>
+                                <input matInput [matDatepicker]="dobPicker" formControlName="dob"
+                                    (input)="addWastePickerForm && addWastePickerForm.get('personalDetailsForm.dob')?.setValue($event.target)">
+
+                                <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+                                <mat-datepicker #dobPicker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <mat-form-field appearance="fill" class="w-100">
+                                <mat-label>Age (Auto-calculated)</mat-label>
+                                <input matInput formControlName="age"
+                                    [value]="calculateAge(addWastePickerForm.get('personalDetailsForm.dob')?.value)" readonly>
+
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-form-field appearance="fill" class="w-100">
+                                <mat-label>Cell phone number</mat-label>
+                                <input matInput formControlName="cellphoneNo">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field appearance="fill" class="w-100">
+                                <mat-label>Alternative phone number</mat-label>
+                                <input matInput formControlName="altCellphoneNo">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div formGroupName="personalDetailsForm">
+                    <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Last name</mat-label>
+                        <input matInput formControlName="lastName">
+                    </mat-form-field>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <mat-form-field appearance="fill" class="w-100">
+                                <mat-label>Gender</mat-label>
+                                <mat-select formControlName="gender">
+                                    <mat-option disabled selected>Please select gender</mat-option>
+                                    <mat-option *ngFor="let gender of genders" [value]="gender.id">{{ gender.name }}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <mat-form-field appearance="fill" class="w-100">
+                                <mat-label>Race</mat-label>
+                                <mat-select formControlName="race">
+                                    <mat-option disabled selected>Please select race</mat-option>
+                                    <mat-option *ngFor="let race of races" [value]="race.id">{{ race.name }}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <mat-form-field appearance="fill" class="w-100">
+                                <mat-label>Document Type</mat-label>
+                                <mat-select formControlName="documentType">
+                                    <mat-option disabled selected>Please document type</mat-option>
+                                    <mat-option *ngFor="let documentType of documentTypes" [value]="documentType.id">{{ documentType.docType }}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4" *ngIf="addWastePickerForm.get('personalDetailsForm.documentType')?.value == 1">
+                            <mat-form-field appearance="fill" class="w-100">
+                                <mat-label>SA Identity Number</mat-label>
+                                <input matInput formControlName="identityNumber">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4" *ngIf="addWastePickerForm.get('personalDetailsForm.documentType')?.value == 2">
+                            <mat-form-field appearance="fill" class="w-100">
+                                <mat-label>Other Identity Number</mat-label>
+                                <input matInput formControlName="otherIdentityNumber">
+                            </mat-form-field>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>   
+
+        <!-- Camera and Album Section -->
+        <div class="row col-3">
+            <div class="col-md-12">
+                <div class="camera-and-album ms-4">
+                    <!-- Camera Placeholder -->
+                    <div class="camera-container">
+                        <div class="camera-frame">
+                            <video #video autoplay></video>
+                            <canvas #canvas style="display: none;"></canvas>
+                        </div>
+                        <!-- Buttons Section -->
+                        <div class="button-container">
+                            <button mat-raised-button color="primary" (click)="toggleCamera()">
+                                <mat-icon>{{ isCameraOn ? 'camera_alt' : 'power_settings_new' }}</mat-icon> {{ isCameraOn ? 'Take Photo' : 'Switch Camera' }}
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Captured Image -->
+                    <div class="captured-image-container" *ngIf="capturedImage">
+                        <img [src]="capturedImage" alt="Captured Image">
+                        <button mat-raised-button color="warn" (click)="retakePhoto()">
+                            <mat-icon>refresh</mat-icon> Retake
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="d-flex justify-content-between flex-row my-3">

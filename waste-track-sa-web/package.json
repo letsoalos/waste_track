@@ -33,6 +33,7 @@
     "ngx-extended-pdf-viewer": "^15.2.0",
     "ngx-spinner": "^15.0.1",
     "ngx-toastr": "^18.0.0",
+    "ngx-webcam": "^0.4.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "xng-breadcrumb": "^10.0.2",

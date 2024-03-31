@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { RegistrarService } from 'src/app/registrar/registrar.service';
 import { GenderDto, RaceDto, DocumentTypeDto } from 'src/app/shared/models/wastePicker';
 
@@ -16,7 +16,7 @@ export class PersonalDetailsComponent implements OnInit {
   genders: any | GenderDto[] = [];
   races: any | RaceDto[] = [];
   documentTypes: any | DocumentTypeDto[] = [];
-  capturedImages: string[] = [];
+  capturedImage: string | undefined;
   isCameraOn: boolean = false;
 
   constructor(private registrarService: RegistrarService) {}
@@ -115,18 +115,14 @@ export class PersonalDetailsComponent implements OnInit {
     canvas.height = video.videoHeight;
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
   
-    const imageDataUrl = canvas.toDataURL('image/png');
-    console.log('Image captured:', imageDataUrl);
-  
-    if (this.capturedImages.length < 3) {
-      this.capturedImages.push(imageDataUrl);
-    } else {
-      console.log('Maximum limit reached.');
-    }
+    // Save captured image in base64 format
+    this.capturedImage = canvas.toDataURL('image/png');
+    console.log('Image captured:', this.capturedImage);
   }
 
-  retakePhoto(index: number): void {
-    this.capturedImages.splice(index, 1);
+  retakePhoto() {
+    // Clear the captured image
+    this.capturedImage = undefined;
   }
 
   calculateAgeOnLoad() {

@@ -16,7 +16,7 @@ export class AddWastePickerComponent {
       identityNumber: ['', Validators.nullValidator],
       otherIdentityNumber: ['', Validators.nullValidator],
       dob: ['', Validators.required],
-      age: ['', Validators.required],
+      age: ['', Validators.nullValidator],
       gender: ['', Validators.required],
       race: ['', Validators.required],
       documentType: ['', Validators.required],

@@ -75,5 +75,6 @@ export class SupportingDocsComponent {
   retakePhoto(index: number): void {
     this.capturedImages.splice(index, 1);
   }
+  
 
 }
