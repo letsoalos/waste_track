@@ -2,15 +2,15 @@ export interface WastePickerDto {
   id: number
   firstName: string
   lastName: string
-  dob: string
-  identityNumber: string
-  otherIdentityNumber: string
+  dob: string | null
+  identityNumber: string | null
+  otherIdentityNumber: string | null
   age: number
   cellphoneNo: string
-  altCellphoneNo: string
-  potrait: string
+  altCellphoneNo: string | null
+  potrait: string | null
   wastePickerNo: number
-  comment: string
+  comment: string | null
   consent: number
   createdBy: string
   createdDate: string
@@ -24,7 +24,7 @@ export interface WastePickerDto {
   manualPrintCount: number
   autoPrintCount: number
   documentType: string
-  documentTypeId: number
+  documentTypeId: number | null
   wastePickerStatus: string
   gender: string
   genderId: number

@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   
-    //{ path: '', component: HomeComponent },
+    { path: '', component: HomeComponent },
     { path: 'registrar', 
       loadChildren: () => import('./registrar/registrar.module').then(x => x.RegistrarModule),
       data: {breadcrumb: 'registrar'} 

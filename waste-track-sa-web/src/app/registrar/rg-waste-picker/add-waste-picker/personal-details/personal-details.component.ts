@@ -22,11 +22,16 @@ export class PersonalDetailsComponent implements OnInit {
   constructor(private registrarService: RegistrarService) {}
   
   ngOnInit(): void {
-    this.loadGender();
-    this.loadRace();
-    this.loadDocumentType();
-    // Calculate age initially
-    this.calculateAgeOnLoad();
+
+    if (this.addWastePickerForm) {
+      this.loadGender();
+      this.loadRace();
+      this.loadDocumentType();
+      this.calculateAgeOnLoad();
+    } else {
+      console.error('addWastePickerForm is not initialized.');
+    }
+
   }
 
   loadGender(): void {
@@ -127,12 +132,21 @@ export class PersonalDetailsComponent implements OnInit {
 
   calculateAgeOnLoad() {
     const dobControl = this.addWastePickerForm.get('personalDetailsForm.dob');
-    if (dobControl && dobControl.value) {
+    console.log('dobValue:', dobControl?.value);
+  
+    if (dobControl && dobControl.value !== null && dobControl.value !== undefined) {
       const dob = new Date(dobControl.value);
-      const age = this.calculateAge(dob);
-      this.addWastePickerForm.get('personalDetailsForm.age')?.setValue(age);
+      if (!isNaN(dob.getTime())) { // Check if dob is a valid date
+        const age = this.calculateAge(dob);
+        this.addWastePickerForm.get('personalDetailsForm.age')?.setValue(age);
+      } else {
+        console.error('Invalid date of birth:', dobControl.value);
+      }
+    } else {
+      console.error('Date of birth control is null or undefined.');
     }
   }
+
 
   calculateAge(dob: Date): number {
     const today = new Date();
@@ -144,4 +158,6 @@ export class PersonalDetailsComponent implements OnInit {
     }
     return age;
   }
+
+  
 }

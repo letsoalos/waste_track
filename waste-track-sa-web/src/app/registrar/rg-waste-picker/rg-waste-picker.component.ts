@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { WastePickerDto } from 'src/app/shared/models/wastePicker';
 import { RegistrarService } from '../registrar.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 function actionCellRender(params: any) {
   let eGui = document.createElement("div");
@@ -38,7 +39,9 @@ export class RgWastePickerComponent implements OnInit{
   public gridApi: WastePickerDto[] = [];
   wastePickers: any | WastePickerDto[] = [];
 
-  constructor(private registrarService: RegistrarService, private router: Router) {}
+  constructor(private registrarService: RegistrarService, 
+              private router: Router,
+              private toastr: ToastrService) {}
 
   ngOnInit(): void {
    this.loadWastePickerList();
@@ -209,9 +212,7 @@ export class RgWastePickerComponent implements OnInit{
     }
   }
 
-
   onGridReady(params: any) {
     this.gridApi = params.api;
   }
-
 }

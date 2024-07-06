@@ -37,7 +37,6 @@ export class WastePickerDetailsComponent implements OnInit {
     });
 }
 
-
   loadWastePicker(id: number): void {
     this.registrarService.getWastePickerDetails(id).subscribe({
       next: (res) => {

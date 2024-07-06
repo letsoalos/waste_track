@@ -1,5 +1,5 @@
 import { Component, Input, Self } from '@angular/core';
-import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
+import { ControlValueAccessor, FormControl, NgControl, ValidatorFn } from '@angular/forms';
 
 
 @Component({
@@ -13,6 +13,7 @@ export class TextInputComponent implements ControlValueAccessor {
   @Input() label = '';
   @Input() isDropdown: boolean = false;
   @Input() readonly: boolean = false;
+  @Input() customValidator?: ValidatorFn;
 
   constructor(@Self() public controlDir: NgControl) {
     this.controlDir.valueAccessor = this;

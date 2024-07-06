@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { MunicipalityModule } from './municipality/municipality.module';
+import { FormService } from './registrar/form.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MunicipalityModule } from './municipality/municipality.module';
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true},
+    FormService
   ],
   bootstrap: [AppComponent]
 })

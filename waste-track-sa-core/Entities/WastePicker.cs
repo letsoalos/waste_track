@@ -34,7 +34,6 @@ namespace waste_track_sa_core.Entities
         public int ManualPrintCount { get; set; }                     //cant locate related table
         public int AutoPrintCount { get; set; }                       //cant locate related table                     
 
-
         public DocumentType DocumentType { get; set; }   
         public WastePickerStatus WastePickerStatus { get; set; } 
         public Gender Gender { get; set; }    

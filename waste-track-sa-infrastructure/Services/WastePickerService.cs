@@ -16,7 +16,7 @@ namespace waste_track_sa_infrastructure.Services
         {  
             var existingWastePicker = await _unitOfWork.Repository<WastePicker>().Get(x => x.Id == wastePicker.Id);
 
-            // Generate a unique Waste Picker Number
+          // Generate a unique Waste Picker Number
            int wastePickerNumber;
            do
            {
